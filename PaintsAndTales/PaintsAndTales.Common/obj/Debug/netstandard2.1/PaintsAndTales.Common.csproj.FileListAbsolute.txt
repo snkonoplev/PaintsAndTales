@@ -1,0 +1,8 @@
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\bin\Debug\netstandard2.1\PaintsAndTales.Common.deps.json
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\bin\Debug\netstandard2.1\PaintsAndTales.Common.dll
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\bin\Debug\netstandard2.1\PaintsAndTales.Common.pdb
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\obj\Debug\netstandard2.1\PaintsAndTales.Common.csprojAssemblyReference.cache
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\obj\Debug\netstandard2.1\PaintsAndTales.Common.AssemblyInfoInputs.cache
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\obj\Debug\netstandard2.1\PaintsAndTales.Common.AssemblyInfo.cs
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\obj\Debug\netstandard2.1\PaintsAndTales.Common.dll
+E:\PaintsAndTales\PaintsAndTales\PaintsAndTales.Common\obj\Debug\netstandard2.1\PaintsAndTales.Common.pdb
