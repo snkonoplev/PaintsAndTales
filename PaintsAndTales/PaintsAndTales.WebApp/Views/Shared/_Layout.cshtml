@@ -1,48 +1,162 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PaintsAndTales.WebApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/shop.css" />
+    <link rel="stylesheet" href="~/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PaintsAndTales.WebApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<!-- header -->
+	<header>
+		<div class="container">
+			<!-- top nav -->
+			<nav class="top_nav d-flex pt-3 pb-1">
+				<!-- logo -->
+				<h1>
+					<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CK</a>
+				</h1>
+				<!-- //logo -->
+				<div class="w3ls_right_nav ml-auto d-flex">
+					<div class="nav-icon d-flex">
+						<!-- sigin and sign up -->
+						<a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+							<i class="far fa-user"></i>
+						</a>
+						<!-- sigin and sign up -->
+						<!-- shopping cart -->
+						<div class="cart-mainf">
+							<div class="hubcart hubcart2 cart cart box_1">
+								<form action="#" method="post">
+									<input type="hidden" name="cmd" value="_cart">
+									<input type="hidden" name="display" value="1">
+									<button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart">
+										<i class="fas fa-shopping-bag"></i>
+									</button>
+								</form>
+							</div>
+						</div>
+						<!-- //shopping cart ends here -->
+					</div>
+				</div>
+			</nav>
+			<!-- //top nav -->
+			<!-- bottom nav -->
+			<nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mx-auto text-center">
+						<li class="nav-item">
+							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+								Домашняя
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+								Магазин
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+								О нас
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+								Контакты
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- //bottom nav -->
+		</div>
+		<!-- //header container -->
+	</header>
+	<!-- //header -->
+	<div>
+			@RenderBody()
+	</div>
+	<!-- footer -->
+	<footer>
+		<div class="footerv2-w3ls">
+			<div class="footer-w3lagile-innerr">
+				<div class="footer-bottomv2 py-5">
+					<div class="container">
+						<ul class="bottom-links-agile">
+							<li>
+								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+									Домашняя
+								</a>
+							</li>
+							<li>
+								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+									Магазин
+								</a>
+							</li>
+							<li>
+								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+									О нас
+								</a>
+							</li>
+							<li>
+								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+									Контакты
+								</a>
+							</li>
+						</ul>
+						<h3 class="text-center follow">Подписывайтесь на нас</h3>
+						<ul class="social-iconsv2 agileinfo">
+							<li>
+								<a href="#">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - PaintsAndTales.WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+							<li>
+								<a href="#">
+									<i class="fab fa-youtube"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fab fa-linkedin-in"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fab fa-google-plus-g"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<script src="~/js/jquery-2.2.3.min.js"></script>
+	<script src="~/js/responsiveslides.min.js"></script>
+	<script src="~/js/owl.carousel.js"></script>
+	<script src="~/js/minicart.js"></script>
+	<script src="~/js/move-top.js"></script>
+	<script src="~/js/easing.js"></script>
+	<script src="~/js/bootstrap.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>
