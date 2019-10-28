@@ -3,7 +3,7 @@
 	<!DOCTYPE html>
 	<html lang="en" class="">
 	<head>
-		<title>Wokiee - Premium OpenCart Theme</title>
+		<title>Nikon D300</title>
 		<base href="http://demo2.ninethemes.net/wokiee/opencart/1/">
 
 		<!-- Meta -->
@@ -13,12 +13,10 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		 
 		 
-			<meta name="description" content="My Store">
-		 
 		 
 		
 		 
-			<link href="index.htm" rel="canonical">
+			<link href="index-5.html?route=product/product&amp;product_id=31" rel="canonical">
 		 
 			<link href="image\catalog\favicon.png" rel="icon">
 		 
@@ -38,10 +36,30 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 		 
+			 
+		 
+			 
+		 
 
 		<script type="text/javascript" src="catalog\view\theme\wokiee\js\jquery.min.js"></script>
 
 		 
+		      
+		          <script type="text/javascript" src="catalog\view\javascript\jquery\magnific\jquery.magnific-popup.min.js"></script>
+		      
+					 
+		      
+		          <script type="text/javascript" src="catalog\view\javascript\jquery\datetimepicker\moment\moment.min.js"></script>
+		      
+					 
+		      
+		          <script type="text/javascript" src="catalog\view\javascript\jquery\datetimepicker\moment\moment-with-locales.min.js"></script>
+		      
+					 
+		      
+		          <script type="text/javascript" src="catalog\view\javascript\jquery\datetimepicker\bootstrap-datetimepicker.min.js"></script>
+		      
+					 
 
 		  
 	</head>	
@@ -111,115 +129,8 @@
 	</div>
 
 		 
-		 
-			 
-      <!-- Modal (newsletter) -->
-    <div class="modal  fade" id="Modalnewsletter" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true" data-pause="2000">
-      <div class="modal-dialog modal-sm" id="popup-1">
-        <div class="modal-content ">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
-          </div>
-          <div class="modal-body no-background" style=" max-width: 750px;   ">
-            <div class="tt-modal-newsletter">
-              <div class="tt-modal-newsletter-promo">
-                                <div class="tt-title-small">BE THE FIRST<br>TO KNOW ABOUT</div>
-                <div class="tt-title-large"> WOKIEE</div>
-                <p>
-                   OPENCART FASHION DROPSHIPPING THEME
-                </p>
-              </div>
-              <p>
-                By subscribe, you accept the terms & privacy policy<br>
-              </p>
-              <div class="subscribe-form form-default">
-                <div class="row-subscibe">
-                  <div class="input-group">
-                    <input type="text" class="form-control email" placeholder="Enter your e-mail">
-                    <button type="submit" class="btn subscribe">Join us</button>
-                  </div>
-                </div>
-                 
-                  <div class="checkbox-group">
-                    <input type="checkbox" id="checkBox1">
-                    <label for="checkBox1">
-                      <span class="check"></span>
-                      <span class="box"></span>
-                      Don’t Show This Popup Again
-                    </label>
-                  </div>
-                              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-    $(document).ready(function() {
-      function Subscribe() {
-        $.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/subscribe', 
-          { 
-            email: $('#popup-1 .email').val() 
-          }, function (e) {
-            if(e.error === 1) {
-              var r = confirm(e.message);
-              if (r == true) {
-                  $.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe', { 
-                    email: $('#popup-1 .email').val() 
-                  }, function (e) {
-                    $('#popup-1 .email').val('');
-                    alert(e.message);
-                  }, 'json');
-              }
-          } else if(e.error === 0) {
-            $('#popup-1 .email').val('');
-            alert(e.message);
-            $.magnificPopup.close();
-            } else {
-              $('#popup-1 .email').val('');
-              alert(e.message);
-            }
-          }
-        , 'json');
-      }
 
-      $('#popup-1 .subscribe').click(Subscribe);
-      $('#popup-1 .email').keypress(function (e) {
-          if (e.which == 13) {
-              Subscribe();
-          }
-      });
-    });
-    </script>
-  
-			 
-
-		 
-		 
-			 
-	<div class="tt-promo-fixed">
-		<button class="tt-btn-close"></button>
-		<div class="tt-img">
-			<a href="#"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/product/product-14.jpg" alt=""></a>
-		</div>
-		<div class="tt-description">
-			<div class="tt-box-top">
-				<p>
-					Someone purchased a
-				</p>
-				<p>
-					<a href="#">
-						iPod Classic
-					</a>
-				</p>
-			</div>
-			<div class="tt-info">
-				14 Minutes ago from  New York, USA
-			</div>
-		</div>
-	</div>
-
-			
+		
 		 
 
 	 
@@ -770,7 +681,7 @@
 	</ul>
 	
 	<input type="hidden" name="code" value="">
-	<input type="hidden" name="redirect" value="http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=common/home">
+	<input type="hidden" name="redirect" value="http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=product/product&amp;product_id=31&amp;tag=Top">
 </form>
  
  
@@ -787,7 +698,7 @@
 	</ul>
 	
     <input type="hidden" name="code" value="">
-    <input type="hidden" name="redirect" value="http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=common/home">
+    <input type="hidden" name="redirect" value="http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=product/product&amp;product_id=31&amp;tag=Top">
 </form>
 
 								</div>
@@ -815,402 +726,725 @@
 
 	 
  
-
-		 
-	 
-	 
-	
-	<div id="tt-pageContent">
-				 
-			 
-				 
-	 
-	<div class="container-indent nomargin">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="slider-revolution revolution-default">
-					<div class="tp-banner-container">
-						<div class="tp-banner revolution">
-							<script type="text/javascript" src="system\config\revslider\public\assets\js\jquery.themepunch.tools.min.js"></script>
-							<script type="text/javascript" src="system\config\revslider\public\assets\js\jquery.themepunch.revolution.min.js"></script>
-							<script type='text/javascript'></script>	
-<link rel='stylesheet' id='rs-plugin-settings' media='all' href='system\config\revslider\public\assets\css\settings.css' type='text/css'>	
-	
-<script id='revmin-actions' src='system\config\revslider\public\assets\js\extensions\revolution.extension.actions.min.js' type='text/javascript'></script>	
-<script id='revmin-carousel' src='system\config\revslider\public\assets\js\extensions\revolution.extension.carousel.min.js' type='text/javascript'></script>	
-<script id='revmin-kenburn' src='system\config\revslider\public\assets\js\extensions\revolution.extension.kenburn.min.js' type='text/javascript'></script>	
-<script id='revmin-layeranimation' src='system\config\revslider\public\assets\js\extensions\revolution.extension.layeranimation.min.js' type='text/javascript'></script>	
-<script id='revmin-migration' src='system\config\revslider\public\assets\js\extensions\revolution.extension.migration.min.js' type='text/javascript'></script>	
-<script id='revmin-navigation' src='system\config\revslider\public\assets\js\extensions\revolution.extension.navigation.min.js' type='text/javascript'></script>	
-<script id='revmin-parallax' src='system\config\revslider\public\assets\js\extensions\revolution.extension.parallax.min.js' type='text/javascript'></script>	
-<script id='revmin-slideanims' src='system\config\revslider\public\assets\js\extensions\revolution.extension.slideanims.min.js' type='text/javascript'></script>	
-<script id='revmin-video' src='system\config\revslider\public\assets\js\extensions\revolution.extension.video.min.js' type='text/javascript'></script>	
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" property="stylesheet" type="text/css" media="all">
-<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
-<!-- START REVOLUTION SLIDER  auto mode -->
-	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="">
-<ul>	<!-- SLIDE  -->
-	<li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://demo2.ninethemes.net/wokiee/opencart/1/image/catalog/revslider_media_folder/slide-01.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="image\catalog\revslider_media_folder\slide-01.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 1 -->
-		<div class="tp-caption   tp-resizeme" id="slide-1-layer-1" data-x="center" data-hoffset="" data-y="center" data-voffset="" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":600,"speed":600,"frame":"0","from":"y:top;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"y:50px;opacity:0;","ease":"Power4.easeIn"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255,255,255,1);font-family:Open Sans;"><div class="tp-caption1">
-<div class="tp-caption1-wd-1 tt-base-color">Multipurpose</div>
-<div class="tp-caption1-wd-2">Premium<br>OpenCart Theme</div>
-<div class="tp-caption1-wd-3">30 skins, powerful features, great support, exclusive offer</div>
-<div class="tp-caption1-wd-4"><a href="index-2.html?route=product/category&path=34" target="_blank" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
-</div> </div>
-	</li>
-	<!-- SLIDE  -->
-	<li data-index="rs-3" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://demo2.ninethemes.net/wokiee/opencart/1/image/catalog/revslider_media_folder/slide-02.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="image\catalog\revslider_media_folder\slide-02.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina="">
-		<!-- LAYERS -->
-
-		<!-- LAYER NR. 2 -->
-		<div class="tp-caption   tp-resizeme" id="slide-3-layer-1" data-x="center" data-hoffset="" data-y="center" data-voffset="" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":600,"speed":600,"frame":"0","from":"y:top;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"y:50px;opacity:0;","ease":"Power4.easeIn"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255,255,255,1);font-family:Open Sans;"><div class="tp-caption1">
-<div class="tp-caption1-wd-1 tt-base-color" style="color: #fff">Ready To</div>
-<div class="tp-caption1-wd-2" style="color: #fff">Use Unique<br>Demos</div>
-<div class="tp-caption1-wd-3" style="color: #fff">Optimized for speed, website that sells</div>
-<div class="tp-caption1-wd-4"><a href="index-2.html?route=product/category&path=34" target="_blank" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
-</div> </div>
-	</li>
-	<!-- SLIDE  -->
-	<li data-index="rs-9" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="http://demo2.ninethemes.net/wokiee/opencart/1/image/catalog/revslider_media_folder/slide-02.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-		<!-- MAIN IMAGE -->
-		<img src="image\catalog\revslider_media_folder\video_img.jpg" alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg" data-no-retina="">
-		<!-- LAYERS -->
-
-		<!-- BACKGROUND VIDEO LAYER -->
-		<div class="rs-background-video-layer" data-forcerewind="on" data-videowidth="100%" data-videoheight="100%" data-videomp4="http://demo2.ninethemes.net/wokiee/video.mp4" data-videopreload="auto" data-videoloop="none" data-forcecover="1" data-aspectratio="16:9" data-autoplay="true" data-autoplayonlyfirsttime="false"></div>
-		<!-- LAYER NR. 3 -->
-		<div class="tp-caption   tp-resizeme" id="slide-9-layer-1" data-x="center" data-hoffset="-1" data-y="center" data-voffset="" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":600,"speed":600,"frame":"0","from":"y:top;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":600,"frame":"999","to":"y:50px;opacity:0;","ease":"Power4.easeIn"}]' data-textalign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255,255,255,1);font-family:Open Sans;"><div class="tp-caption1">
-<div class="tp-caption1-wd-1 tt-base-color">Premium</div>
-<div class="tp-caption1-wd-2" style="color: #fff">Save $200+<br>in our Custom Modules</div>
-<div class="tp-caption1-wd-3" style="color: #fff">Faq, Filter Product, Cookies...</div>
-<div class="tp-caption1-wd-4"><a href="index-2.html?route=product/category&path=34" target="_blank" class="btn btn-xl" data-text="SHOP NOW!">SHOP NOW!</a></div>
-</div> </div>
-	</li>
-</ul>
-<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
-						if(htmlDiv) {
-							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-						}else{
-							var htmlDiv = document.createElement("div");
-							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-						}
-					</script>
-<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
-<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
-				if(htmlDiv) {
-					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-				}else{
-					var htmlDiv = document.createElement("div");
-					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
-					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
-				}
-			</script>
-		<script type="text/javascript">
-						/******************************************
-				-	PREPARE PLACEHOLDER FOR SLIDER	-
-			******************************************/
-
-			var setREVStartSize=function(){
-				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
-					e.c = jQuery('#rev_slider_1_1');
-					e.gridwidth = [1240];
-					e.gridheight = [800];
-							
-					e.sliderLayout = "auto";
-					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
-					
-				}catch(d){console.log("Failure at Presize of Slider:"+d)}
-			};
-			
-			setREVStartSize();
-			
-						var tpj=jQuery;
-			
-			var revapi1;
-			tpj(document).ready(function() {
-				if(tpj("#rev_slider_1_1").revolution == undefined){
-					revslider_showDoubleJqueryError("#rev_slider_1_1");
-				}else{
-					revapi1 = tpj("#rev_slider_1_1").show().revolution({
-						sliderType:"standard",
-jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider/public/assets/js/",
-						sliderLayout:"auto",
-						dottedOverlay:"none",
-						delay:9000,
-						navigation: {
-							keyboardNavigation:"off",
-							keyboard_direction: "horizontal",
-							mouseScrollNavigation:"off",
- 							mouseScrollReverse:"default",
-							onHoverStop:"off",
-							bullets: {
-								enable:true,
-								hide_onmobile:false,
-								style:"",
-								hide_onleave:false,
-								direction:"horizontal",
-								h_align:"center",
-								v_align:"bottom",
-								h_offset:0,
-								v_offset:20,
-								space:5,
-								tmp:'<span class="tp-bullet-image"></span><span class="tp-bullet-title"></span>'
-							}
-						},
-						visibilityLevels:[1240,1024,778,480],
-						gridwidth:1240,
-						gridheight:800,
-						lazyType:"none",
-						shadow:0,
-						spinner:"spinner0",
-						stopLoop:"off",
-						stopAfterLoops:-1,
-						stopAtSlide:-1,
-						shuffle:"off",
-						autoHeight:"off",
-						disableProgressBar:"on",
-						hideThumbsOnMobile:"off",
-						hideSliderAtLimit:0,
-						hideCaptionAtLimit:0,
-						hideAllCaptionAtLilmit:0,
-						debugMode:false,
-						fallbacks: {
-							simplifyAll:"off",
-							nextSlideOnWindowFocus:"off",
-							disableFocusListener:false,
-						}
-					});
-				}
-			});	/*ready*/
-		</script>
-		<script>
-					var htmlDivCss = unescape("%40media%20%28min-width%3A%20768px%29%20%7B%0A%09.rev_slider_wrapper%2C%20.fullwidthabanner%20%7B%0A%20%20%09%09height%3A%20calc%28100vh%20-%2050px%29%20%21important%3B%09%0A%20%20%09%7D%0A%20%20.rev_slider_wrapper%20.tp-parallax-wrap%20%7B%0A%20%20%20top%3A%2050%25%20%21important%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20.rev_slider_wrapper%20.tp-parallax-wrap%20.tp-caption1%20%7B%0A%20%20transform%3A%20translateY%28-50%25%29%20%21important%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20-webkit-transform%3A%20translateY%28-50%25%29%20%21important%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20-moz-transform%3A%20translateY%28-50%25%29%20%21important%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%7D");
-					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
-					if(htmlDiv) {
-						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
-					}
-					else{
-						var htmlDiv = document.createElement('div');
-						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
-						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
-					}
-				  </script></div><!-- END REVOLUTION SLIDER --> 
-						</div>
-					</div>
-				</div>
-			</div>
+ 
+			<div class="tt-breadcrumb">
+		<div class="container">
+			<ul>
+		     	 
+		     	<li><a href="index.html?route=common/home">  Home  </a></li>
+		     	 
+		     	<li><a href="index-69.html?route=product/search&amp;tag=Top"> Search </a></li>
+		     	 
+		     	<li><a href="index-274.html?route=product/product&amp;tag=Top&amp;product_id=31"> Nikon D300 </a></li>
+		     	 
+			</ul>
 		</div>
 	</div>
 
+		 
+
+	<div id="tt-pageContent">
+											 
+			
+						 
+
+						 
+			
+						 
+		
+<div class="container-indent" id="product">
+	<!-- mobile product slider  -->
+	<div class="tt-mobile-product-layout visible-xs">
+		<div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
+	      	 
+	      		<div><img src='image\cache\catalog\wokiee\product\product-16-930x1163.jpg' alt=""></div>
+		  	 
+		  	 
+				<div><img src="image\cache\catalog\wokiee\product\product-16-03-930x1163.jpg" alt=""></div>
 			 
-				 
-	<div class="container-indent0">
-	<div class="container-fluid">
-		<div class="row tt-layout-promo-box">
-			<div class="col-sm-12 col-md-6">
-				<div class="row">
-					<div class="col-sm-6">
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child hover-type-2">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-01.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">SALE</div>
-								</div>
-							</div>
-						</a>
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child hover-type-2">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-02.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">NEW</div>
-								</div>
-							</div>
-						</a>
+				<div><img src="image\cache\catalog\wokiee\product\product-16-02-930x1163.jpg" alt=""></div>
+			 
+				<div><img src="image\cache\catalog\wokiee\product\product-16-01-930x1163.jpg" alt=""></div>
 					</div>
-					<div class="col-sm-6">
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child hover-type-2">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-03.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">WOMEN</div>
+	</div>
+	<!-- /mobile product slider  -->
+	<div class="container">
+		<div class="row airSticky_stop-block">
+			 
+			<div class="col-lg-12">
+				<div class="row ">
+					<div class="col-md-12 col-lg-6 hidden-xs">
+												 
+													<div class="airSticky deactivate-sticky">
+								<div class="tt-product-vertical-layout clearfix">
+									<div class="tt-product-single-img">
+										<div>
+											<button class="tt-btn-zomm tt-top-right"><i class="icon-f-86"></i></button>
+									      	 
+									      		<img class="zoom-product" src='image\cache\catalog\wokiee\product\product-16-930x1163.jpg' data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-930x1163.jpg" alt="">
+										  	 
+										</div>
+									</div>
+									<div class="tt-product-single-carousel-vertical">
+										<ul id="smallGallery" class="tt-slick-button-vertical  slick-animated-show-js">
+											 
+												<li><a class="zoomGalleryActive" href="#" data-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-930x1163.jpg" data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-930x1163.jpg"><img src="image\cache\catalog\wokiee\product\product-16-930x1163.jpg" alt=""></a></li>
+																						 
+												<li><a href="#" data-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-03-930x1163.jpg" data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-03-930x1163.jpg"><img src="image\cache\catalog\wokiee\product\product-16-03-930x1163.jpg" alt=""></a></li>
+											 
+												<li><a href="#" data-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-02-930x1163.jpg" data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-02-930x1163.jpg"><img src="image\cache\catalog\wokiee\product\product-16-02-930x1163.jpg" alt=""></a></li>
+											 
+												<li><a href="#" data-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-01-930x1163.jpg" data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-01-930x1163.jpg"><img src="image\cache\catalog\wokiee\product\product-16-01-930x1163.jpg" alt=""></a></li>
+																					</ul>
+									</div>
 								</div>
 							</div>
-						</a>
+																		 
 					</div>
-				</div>
+					<div class="col-md-12 col-lg-6">
+												<div class="tt-product-single-info">
+														 
+					      	  
+							<div class="tt-add-info">
+								<ul>
+									<li><span>Product Code:</span> Product 4</li>
+									<li><span>Availability:</span> In Stock</li>
+								</ul>
+							</div>
+							<h1 class="tt-title">Nikon D300</h1>
+							 
+								<div class="tt-price">
+							         
+							        <span id="price-old">$98.00</span>
+							         
+								</div>
+						         
+						        <span class="price-tax">Ex Tax: <span id="price-tax">$80.00</span></span><br>
+						         
+						         
+						         
+												         
+					          <div class="tt-review">
+					            <div class="tt-rating">
+					              <i class="icon-star-empty"></i>
+					              <i class="icon-star-empty"></i>
+					              <i class="icon-star-empty"></i>
+					              <i class="icon-star-empty"></i>
+					              <i class="icon-star-empty"></i>
+					            </div>
+					            <a href="javascript:$('#review-tab .tt-collapse-title').click();">(0 reviews)</a>
+					          </div>
+					        							<div class="tt-wrapper">
+								
+	
+		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 profes...
+							</div>
+							 
+							<div class="tt-swatches-container">
+						         
+						        <div class="options">
+						           
+						           
+						           
+						          								          <div class="tt-wrapper" id="input-option244">
+							            <div class="tt-title-options"><label class="control-label" for="input-option244">Size:</label></div>
+							            <div class="form-group required">
+											<ul class="tt-options-swatch options-large">
+												 
+																											<li><a href="javascript:;">
+															<input type="radio" class="d-none" name="option[244]" value="88">
+															S
+														</a></li>
+																									 
+																											<li><a href="javascript:;">
+															<input type="radio" class="d-none" name="option[244]" value="87">
+															M
+														</a></li>
+																									 
+																											<li><a href="javascript:;">
+															<input type="radio" class="d-none" name="option[244]" value="86">
+															L
+														</a></li>
+																																					<script type="text/javascript">
+													$(document).ready(function () {
+														$("#input-option244 .tt-options-swatch li a").click(function () {
+															$(this).find('input').prop( "checked", true ).change();
+															$("#input-option244 .tt-options-swatch li").removeClass("active");
+															$(this).parent().addClass("active");
+														});
+													});	
+												</script>
+											</ul>
+								        </div>
+								      </div>
+							        						           
+						           
+						           
+						           
+						           
+						             
+						             
+						             
+						           
+						           
+						           
+						           
+						          								          <div class="tt-wrapper" id="input-option243">
+							            <div class="tt-title-options"><label class="control-label" for="input-option243">Color:</label></div>
+							            <div class="form-group required">
+											<ul class="tt-options-swatch options-large">
+																									  
+													<li><a class="options-color" href="javascript:;">
+														<span class="swatch-img">
+															<input type="checkbox" class="d-none" name="option[243][]" value="81">
+															<img src="image\cache\catalog\color2-50x50.png" alt="" class="loading" data-was-processed="true">
+														</span>
+													</a></li>	
+																																						  
+													<li><a class="options-color" href="javascript:;">
+														<span class="swatch-img">
+															<input type="checkbox" class="d-none" name="option[243][]" value="82">
+															<img src="image\cache\catalog\color5-50x50.png" alt="" class="loading" data-was-processed="true">
+														</span>
+													</a></li>	
+																																					<script type="text/javascript">
+													$(document).ready(function () {
+														$("#input-option243 .tt-options-swatch li a").click(function () {
+															if($(this).find("input").is(":checked")) {
+																$(this).find('input').prop( "checked", false ).change();
+																$(this).parent().removeClass("active");
+															} else {
+																$(this).find('input').prop( "checked", true ).change();
+																$(this).parent().addClass("active");
+															}
+														});
+													});	
+												</script>
+											</ul>
+								        </div>
+								      </div>
+							        						           
+						           
+						           
+						           
+						             
+						             
+						             
+						           
+						        </div>
+						         
+						        
+						         
+		        			</div>
+		        										 
+								 
+									 <div class="product-information-buttons">
+								<a data-toggle="modal" data-target="#modalProductInfo" href="#"><i class="icon-f-09"></i> Size Guide</a>
+								<a data-toggle="modal" data-target="#modalProductInfo-02" href="#"><i class="icon-f-44"></i> Shipping</a>
+							</div>
+<!-- modal (size guid) -->
+<div class="modal  fade" id="modalProductInfo" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
 			</div>
-			<div class="col-sm-12 col-md-6">
-				<div class="row">
-					<div class="col-sm-6">
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child hover-type-2">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-04.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">MEN</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-6">
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child hover-type-2">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-05.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">ACCESSORIES</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-12">
-						<a href="index-2.html?route=product/category&path=34" class="tt-promo-box tt-one-child">
-							<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-06.jpg" alt="">
-							<div class="tt-description">
-								<div class="tt-description-wrapper">
-									<div class="tt-background"></div>
-									<div class="tt-title-small">SHOES</div>
-								</div>
-							</div>
-						</a>
+			<div class="modal-body">
+				<div class="tt-layout-product-info">
+					<h6 class="tt-title">SIZE GUIDE</h6>
+					This is an approximate conversion table to help you find your size.
+					<div class="tt-table-responsive-md">
+						<table class="tt-table-modal-info">
+							<thead>
+								<tr>
+									<th>Italian</th>
+									<th>Spanish</th>
+									<th>German</th>
+									<th>UK</th>
+									<th>US</th>
+									<th>Japanese</th>
+									<th>Chinese</th>
+									<th>Russian</th>
+									<th>Korean</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>34</td>
+									<td>30</td>
+									<td>28</td>
+									<td>4</td>
+									<td>00</td>
+									<td>3</td>
+									<td>155/75A</td>
+									<td>36</td>
+									<td>44</td>
+								</tr>
+								<tr>
+									<td>36</td>
+									<td>32</td>
+									<td>30</td>
+									<td>6</td>
+									<td>0</td>
+									<td>5</td>
+									<td>155/80A</td>
+									<td>38</td>
+									<td>44</td>
+								</tr>
+								<tr>
+									<td>38</td>
+									<td>34</td>
+									<td>32</td>
+									<td>8</td>
+									<td>2</td>
+									<td>7</td>
+									<td>160/84A</td>
+									<td>40</td>
+									<td>55</td>
+								</tr>
+								<tr>
+									<td>40</td>
+									<td>36</td>
+									<td>34</td>
+									<td>10</td>
+									<td>4</td>
+									<td>9</td>
+									<td>165/88A</td>
+									<td>42</td>
+									<td>55</td>
+								</tr>
+								<tr>
+									<td>42</td>
+									<td>38</td>
+									<td>36</td>
+									<td>12</td>
+									<td>6</td>
+									<td>11</td>
+									<td>170/92A</td>
+									<td>44</td>
+									<td>66</td>
+								</tr>
+								<tr>
+									<td>44</td>
+									<td>40</td>
+									<td>38</td>
+									<td>14</td>
+									<td>8</td>
+									<td>13</td>
+									<td>175/96A</td>
+									<td>46</td>
+									<td>66</td>
+								</tr>
+								<tr>
+									<td>46</td>
+									<td>42</td>
+									<td>40</td>
+									<td>16</td>
+									<td>10</td>
+									<td>15</td>
+									<td>170/98A</td>
+									<td>48</td>
+									<td>77</td>
+								</tr>
+								<tr>
+									<td>48</td>
+									<td>44</td>
+									<td>42</td>
+									<td>18</td>
+									<td>12</td>
+									<td>17</td>
+									<td>170/100B</td>
+									<td>50</td>
+									<td>77</td>
+								</tr>
+								<tr>
+									<td>50</td>
+									<td>46</td>
+									<td>44</td>
+									<td>20</td>
+									<td>14</td>
+									<td>19</td>
+									<td>175/100B</td>
+									<td>52</td>
+									<td>88</td>
+								</tr>
+								<tr>
+									<td>52</td>
+									<td>48</td>
+									<td>46</td>
+									<td>22</td>
+									<td>16</td>
+									<td>21</td>
+									<td>180/104B</td>
+									<td>54</td>
+									<td>88</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-					 
-
-							
-				 
-		
-				 
-		
-			
-				 
-
-				 
-																				
-				 
-					
-		 
-		 
-
-				 
-			 
-				 
-								
-	 
-		 
-			<div class="container-indent">
-				<div class="container container-fluid-custom-mobile-padding">
-					<div class="tt-block-title">
-												<h1 class="tt-title">TRENDING</h1>
-						<div class="tt-description"> TOP VIEW IN THIS WEEK</div>
-					</div>
-
-										<div class="row tt-layout-product-item">
-											<div class="col-6 col-md-4 col-lg-3">
-																								
-<div class="tt-product thumbprod-center" id="product-42">
-	<div class="tt-image-box">
-		<a href="index-28.html?route=product/quickview&amp;product_id=42" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('42');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('42');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-4.html?route=product/product&amp;product_id=42">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-01-930x1163.jpg" alt="Apple Cinema 30&quot;"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-01-04-930x1163.jpg" alt="Apple Cinema 30&quot;"></span>							 
-			 
-								 
-
-				 
-					<span class="tt-label-location">
-						<span class="tt-label-sale">Sale</span>
-					</span>
-							 
-		</a>
-		 
-											  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-29.html?route=product/category&amp;path=20">Desktops</a></li>
-			</ul>
-							<div class="tt-rating">
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star-empty"></i>
-				</div>
-					</div>
-		<h2 class="tt-title"><a href="index-4.html?route=product/product&amp;product_id=42">Apple Cinema 30&quot;</a></h2>
-		 
-			<div class="tt-price">
-				 
-					<span class="new-price">$110.00</span> <span class="old-price">$122.00</span>
-				 
+<!-- modal (size guid) -->
+<div class="modal  fade" id="modalProductInfo-02" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content ">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
 			</div>
-				 
-		 
-			<div class="tt-option-block">
-				<ul class="tt-options-swatch">
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color1.png)" href="#"></a></li>
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color2.png)" href="#"></a></li>
-									</ul>
-			</div>
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('42');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
+			<div class="modal-body">
+				<div class="tt-layout-product-info-02">
+					<h6 class="tt-title">SHIPPING</h6>
+					<ul>
+						<li>Complimentary ground shipping within 1 to 7 business days</li>
+						<li>In-store collection available within 1 to 7 business days</li>
+						<li>Next-day and Express delivery options also available</li>
+						<li>Purchases are delivered in an orange box tied with a Bolduc ribbon, with the exception of certain items</li>
+						<li>See the delivery FAQs for details on shipping methods, costs and delivery times</li>
+					</ul>
+					<h6 class="tt-title">RETURNS AND EXCHANGES</h6>
+					<ul>
+						<li>Easy and complimentary, within 14 days</li>
+						<li>See conditions and procedure in our return FAQs</li>
+					</ul>
 				</div>
-						<div class="tt-row-btn">
-				<a href="index-28.html?route=product/quickview&amp;product_id=42" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('42');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('42');" class="tt-btn-compare"></a>
-							</div>
+			</div>
 		</div>
 	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-47">
+</div> 
+															      
+
+														 
+								 
+									 
+     
+<div class="product-information-buttons">
+  <a href="javascript:;" class="mespr button-product-question" data-toggle="modal" data-target="#popup-product-question-1">
+        
+       <span class="text-enquiry"><i class="icon-f-72"></i>  Ask about this product</span>
+        
+  </a>
+</div>
+       
+  <div class="modal fade" id="popup-product-question-1" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-small" id="popup-1">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span></button>
+        </div>
+        <div class="modal-body">
+          <div class="tt-modal-verifyage">
+
+            <h5>Have a question?</h5> 
+            <form action="" method="post" enctype="multipart/form-data" id="contact" class="form-contact popup-contact form-default">
+                  
+                 <input type="hidden" name="product_id" value="31">
+                  
+
+                 <fieldset>
+                   <div class="contact-label">
+                     <div>
+                       <input type="text" name="name" value="" id="input-name" placeholder="Your Name" class="form-control">
+                     </div>
+                   </div>
+                   <div class="contact-label">
+                     <div>
+                       <input type="text" name="email" value="" id="input-email" placeholder="E-Mail Address" class="form-control">
+                     </div>
+                   </div>
+                   <div class="contact-label">
+                     <div>
+                       <textarea name="enquiry" rows="7" id="input-enquiry" placeholder="Enquiry" class="form-control"></textarea>
+                     </div>
+                   </div>
+                 </fieldset>
+                 
+
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </form>
+
+            <script type="text/javascript">
+                 function IsEmail(email) {
+                      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                      return regex.test(email);
+                 }
+
+                 $('#popup-1 #contact').bind('submit', function(){
+                      var valid = true;
+                    
+                      if($('#popup-product-question-1 #input-name').val().length < 3 || $('#popup-product-question-1 #input-name').val().length > 32){
+                           $('#popup-product-question-1 #input-name').addClass("error");
+                           valid = false;
+                      } else {
+                           $('#popup-product-question-1 #input-name').removeClass("error");
+
+                      }
+
+                      if(IsEmail($('#popup-product-question-1 #input-email').val())) {
+                           $('#popup-product-question-1 #input-email').removeClass("error");
+                      } else {
+                           $('#popup-product-question-1 #input-email').addClass("error");
+                           valid = false;
+                      }
+                     
+
+                      if($('#popup-product-question-1 #input-enquiry').val().length < 10 || $('#popup-product-question-1 #input-enquiry').val().length > 3000){
+                           $('#popup-product-question-1 #input-enquiry').addClass("error");
+                           valid = false;
+                      } else {
+                           $('#popup-product-question-1 #input-enquiry').removeClass("error");
+                      }
+
+                      if(valid) {
+                           $.ajax({
+                                  type: "POST",
+                                  url: "http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/product_questions/contact",
+                                  data: $("#popup-product-question-1 #contact").serialize(), // serializes the form's elements.
+                                  success: function(data)
+                                  {
+                                      alert(data); // show response from the php script.
+                                      $('#popup-product-question-1').modal('hide')
+                                  }
+                                });
+
+                           return false;
+                      } else {
+                           return false;
+                      }
+                 });
+            </script>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+															 
+
+														 
+								<div class="tt-wrapper">
+									<div class="tt-row-custom-01">
+										<div class="col-item">
+											<div class="tt-input-counter style-01">
+												<span class="minus-btn"></span>
+												<input type="text" name="quantity" id="quantity_wanted" size="200" value="1">
+												<span class="plus-btn"></span>
+											</div>
+										</div>
+										<div class="col-item">
+			             					<input type="hidden" name="product_id" value="31">
+			             					<a href="javascript:;" class="btn btn-lg" id="button-cart" data-loading-text="Loading..." data-original-text="Add to Cart"><i class="icon-f-39"></i><span>Add to Cart</span></a>
+										</div>
+									</div>
+								</div>
+														 
+							<div class="tt-wrapper">
+								<ul class="tt-list-btn">
+									<li><a href="javascript:;" onclick="wishlist.add('31');" class="btn-link"><i class="icon-n-072"></i> ADD TO WISHLIST </a></li>
+									<li><a href="javascript:;" onclick="compare.add('31');" class="btn-link"><i class="icon-n-08"></i> ADD TO COMPARE </a></li>
+								</ul>
+							</div>
+														 
+							<div class="tt-wrapper">
+								<div class="tt-add-info">
+									<ul>
+								         
+								        										 
+											<li><span>Tags:</span>
+																																				 
+													 
+														<a href="index-67.html?route=product/search&amp;tag=T-Shirt">T-Shirt</a>,
+													 
+												 
+													 
+														<a href="index-68.html?route=product/search&amp;tag=Women">Women</a>,
+													 
+												 
+													 
+														<a href="index-69.html?route=product/search&amp;tag=Top">Top</a>
+													 
+												 
+													 
+														<a href=""></a>
+													 
+												 
+											</li>
+																			</ul>
+								</div>
+							</div>
+														 
+							<div class="tt-collapse-block">
+																								
+								
+								 
+								 								 
+
+																	 
+																					 
+																									 
+																																																																																																																																		 
+
+								
+								 
+									<div class="tt-item">
+										<div class="tt-collapse-title">Description</div>
+										<div class="tt-collapse-content">
+										 											 												 			<div class="cpt_product_description ">
+	<div>
+		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.<br>
+		<br>
+		Similar to the D3, the D300 features Nikon&#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&#39;s new features. The D300 features a new 51-point autofocus system with Nikon&#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.<br>
+		<br>
+		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)<br>
+		<br>
+		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.</div>
+</div>
+<!-- cpt_container_end -->
+										 												 												 												 											</div>
+									</div>
+								 
+									<div class="tt-item" id="review-tab">
+										<div class="tt-collapse-title">Reviews (0)</div>
+										<div class="tt-collapse-content">
+										 											 												 												 															<form class="form-horizontal" id="form-review">
+													  <div id="review"></div>
+													  <h2>Write a review</h2>
+													   
+													  	<div class="form-default">
+														  <div class="form-group required">
+														    <div class="">
+														      <label class="control-label" for="input-name">Your Name</label>
+														      <input type="text" name="name" value="" id="input-name" class="form-control">
+														    </div>
+														  </div>
+														  <div class="form-group required">
+														    <div class="">
+														         <label class="control-label">Rating</label>
+														        
+														       <div class="rating set-rating tt-rating">
+														          <i class="icon-star" data-value="1"></i>
+														          <i class="icon-star" data-value="2"></i>
+														          <i class="icon-star" data-value="3"></i>
+														          <i class="icon-star" data-value="4"></i>
+														          <i class="icon-star" data-value="5"></i>
+														      </div>
+														      <script type="text/javascript">
+														          $(document).ready(function() {
+														            $('.set-rating i').hover(function(){
+														                var rate = $(this).data('value');
+														                var i = 0;
+														                $('.set-rating i').each(function(){
+														                    i++;
+														                    if(i <= rate){
+														                        $(this).addClass('active');
+														                    }else{
+														                        $(this).removeClass('active');
+														                    }
+														                })
+														            })
+														            
+														            $('.set-rating i').mouseleave(function(){
+														                var rate = $('input[name="rating"]:checked').val();
+														                rate = parseInt(rate);
+														                i = 0;
+														                  $('.set-rating i').each(function(){
+														                    i++;
+														                    if(i <= rate){
+														                        $(this).addClass('active');
+														                    }else{
+														                        $(this).removeClass('active');
+														                    }
+														                  })
+														            })
+														            
+														            $('.set-rating i').click(function(){
+														                $('input[name="rating"]:nth('+ ($(this).data('value')-1) +')').prop('checked', true);
+														            });
+														          });
+														      </script>
+														      <div class="d-none">
+														         &nbsp;&nbsp;&nbsp; Bad&nbsp;
+														         <input type="radio" name="rating" value="1">
+														         &nbsp;
+														         <input type="radio" name="rating" value="2">
+														         &nbsp;
+														         <input type="radio" name="rating" value="3">
+														         &nbsp;
+														         <input type="radio" name="rating" value="4">
+														         &nbsp;
+														         <input type="radio" name="rating" value="5">
+														         &nbsp;Good 
+														      </div>
+														   </div>
+														  </div>
+														  <div class="form-group required">
+														    <div class="">
+														      <label class="control-label" for="input-review">Your Review</label>
+														      <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
+														      <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div>
+														    </div>
+														  </div>
+														   
+														  <div class="buttons clearfix" style="margin-bottom: 0px">
+														    <div class="pull-right">
+														      <button type="button" id="button-review" data-loading-text="Loading..." class="btn btn-primary">Continue</button>
+														    </div>
+														  </div>
+														</div>
+													   
+													</form>
+										 												 											</div>
+									</div>
+								 
+									<div class="tt-item">
+										<div class="tt-collapse-title">Custom Tab</div>
+										<div class="tt-collapse-content">
+										 											 		<p>This is a custom tab.<br></p>
+										 											</div>
+									</div>
+															</div>
+						</div>
+											</div>
+				</div>
+			</div>
+					</div>
+	</div>
+</div>
+ 
+<div class="container-indent wrapper-social-icon">
+	<div class="container">
+        <div class="share">
+        	<!-- AddThis Button BEGIN -->
+        	<div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+        	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script> 
+        	<!-- AddThis Button END --> 
+        </div>
+	</div>
+</div>
+
+ 
+<div class="container-indent">
+	<div class="container container-fluid-custom-mobile-padding">
+		<div class="tt-block-title text-left">
+			<h3 class="tt-title-small">Related Products</h3>
+		</div>
+		<div class="tt-carousel-products row arrow-location-right-top tt-alignment-img tt-layout-product-item slick-animated-show-js">
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-28">
 	<div class="tt-image-box">
-		<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		<a href="index-52.html?route=product/quickview&amp;product_id=28" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
 		 
-			<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+			<a href="javascript:wishlist.add('28');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
 				 
-			<a href="javascript:compare.add('47');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-25.html?route=product/product&amp;product_id=47">
+			<a href="javascript:compare.add('28');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-24.html?route=product/product&amp;product_id=28">
 			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-930x1163.jpg" alt="HP LP3065"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-02-930x1163.jpg" alt="HP LP3065"></span>							 
-			 
-				<span class="tt-label-location">
-					<span class="tt-label-new"> New </span>
-				</span>
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-04-930x1163.jpg" alt="HTC Touch HD"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-04-01-930x1163.jpg" alt="HTC Touch HD"></span>							 
 			 
 		</a>
 		  
@@ -1219,10 +1453,10 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		<div class="tt-row">
 			<ul class="tt-add-info">
 				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
+				<li><a href="index-29.html?route=product/category&amp;path=20">Desktops</a></li>
 			</ul>
 					</div>
-		<h2 class="tt-title"><a href="index-25.html?route=product/product&amp;product_id=47">HP LP3065</a></h2>
+		<h2 class="tt-title"><a href="index-24.html?route=product/product&amp;product_id=28">HTC Touch HD</a></h2>
 		 
 			<div class="tt-price">
 				 
@@ -1235,71 +1469,21 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 				<div class="tt-row-btn">
 					 
 					  					 
-						<a onclick="cart.add('47');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+						<a onclick="cart.add('28');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
 					 
 				</div>
 						<div class="tt-row-btn">
-				<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				<a href="index-52.html?route=product/quickview&amp;product_id=28" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
 				 
-					<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist"></a>
+					<a href="javascript:wishlist.add('28');" class="tt-btn-wishlist"></a>
 								 
-					<a href="javascript:compare.add('47');" class="tt-btn-compare"></a>
+					<a href="javascript:compare.add('28');" class="tt-btn-compare"></a>
 							</div>
 		</div>
 	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-43">
-	<div class="tt-image-box">
-		<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('43');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-33.html?route=product/product&amp;product_id=43">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-930x1163.jpg" alt="MacBook"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-02-930x1163.jpg" alt="MacBook"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-33.html?route=product/product&amp;product_id=43">MacBook</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$602.00 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('43');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('43');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
 <div class="tt-product thumbprod-center" id="product-30">
 	<div class="tt-image-box">
 		<a href="index-34.html?route=product/quickview&amp;product_id=30" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
@@ -1355,20 +1539,20 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 							</div>
 		</div>
 	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-44">
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-41">
 	<div class="tt-image-box">
-		<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		<a href="index-54.html?route=product/quickview&amp;product_id=41" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
 		 
-			<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+			<a href="javascript:wishlist.add('41');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
 				 
-			<a href="javascript:compare.add('44');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-36.html?route=product/product&amp;product_id=44">
+			<a href="javascript:compare.add('41');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-79.html?route=product/product&amp;product_id=41">
 			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-930x1163.jpg" alt="MacBook Air"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-02-930x1163.jpg" alt="MacBook Air"></span>							 
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-05-930x1163.jpg" alt="iMac"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-05-02-930x1163.jpg" alt="iMac"></span>							 
 			 
 		</a>
 		  
@@ -1377,63 +1561,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		<div class="tt-row">
 			<ul class="tt-add-info">
 				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-36.html?route=product/product&amp;product_id=44">MacBook Air</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$1,202.00 
-				 
-			</div>
-				 
-		 
-			<div class="tt-option-block">
-				<ul class="tt-options-swatch">
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color3.png)" href="#"></a></li>
-									</ul>
-			</div>
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('44');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('44');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-40">
-	<div class="tt-image-box">
-		<a href="index-37.html?route=product/quickview&amp;product_id=40" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('40');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('40');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-38.html?route=product/product&amp;product_id=40">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-06-930x1163.jpg" alt="iPhone"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-06-04-930x1163.jpg" alt="iPhone"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-29.html?route=product/category&amp;path=20">Desktops</a></li>
+				<li><a href="index-2.html?route=product/category&amp;path=34">Women</a></li>
 			</ul>
 							<div class="tt-rating">
 					<i class="icon-star"></i>
@@ -1443,379 +1571,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 					<i class="icon-star-empty"></i>
 				</div>
 					</div>
-		<h2 class="tt-title"><a href="index-38.html?route=product/product&amp;product_id=40">iPhone</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$123.20 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('40');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-37.html?route=product/quickview&amp;product_id=40" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('40');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('40');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-48">
-	<div class="tt-image-box">
-		<a href="index-39.html?route=product/quickview&amp;product_id=48" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('48');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('48');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-40.html?route=product/product&amp;product_id=48">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-07-930x1163.jpg" alt="iPod Classic"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-07-03-930x1163.jpg" alt="iPod Classic"></span>							 
-			 
-								 
-
-				 
-					<span class="tt-label-location">
-						<span class="tt-label-sale">Sale</span>
-					</span>
-							 
-		</a>
-		 
-									 
-				<div class="tt-countdown_box">
-					<div class="tt-countdown_inner">
-						<div class="tt-countdown" data-date="2021-05-15" data-year="Yrs" data-month="Mths" data-week="Wk" data-day="Day" data-hour="Hrs" data-minute="Min" data-second="Sec"></div>
-					</div>
-				</div>
-					  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-29.html?route=product/category&amp;path=20">Desktops</a></li>
-			</ul>
-							<div class="tt-rating">
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-				</div>
-					</div>
-		<h2 class="tt-title"><a href="index-40.html?route=product/product&amp;product_id=48">iPod Classic</a></h2>
-		 
-			<div class="tt-price">
-				 
-					<span class="new-price">$24.80</span> <span class="old-price">$122.00</span>
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('48');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-39.html?route=product/quickview&amp;product_id=48" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('48');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('48');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-31">
-	<div class="tt-image-box">
-		<a href="index-41.html?route=product/quickview&amp;product_id=31" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('31');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('31');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-5.html?route=product/product&amp;product_id=31">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-930x1163.jpg" alt="Nikon D300"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-16-03-930x1163.jpg" alt="Nikon D300"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-42.html?route=product/category&amp;path=33">Cameras</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-5.html?route=product/product&amp;product_id=31">Nikon D300</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$98.00 
-				 
-			</div>
-				 
-		 
-			<div class="tt-option-block">
-				<ul class="tt-options-swatch">
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color5.png)" href="#"></a></li>
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color2.png)" href="#"></a></li>
-									</ul>
-			</div>
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('31');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-41.html?route=product/quickview&amp;product_id=31" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('31');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('31');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>							 
-						</div>
-					</div>
-				</div>
-			</div>
-			 
-
-			 
-				 
-	<div class="container-indent">
-	<div class="container-fluid-custom">
-		<div class="row tt-layout-promo-box">
-			<div class="col-sm-6 col-md-4">
-				<a href="listing-left-column.html" class="tt-promo-box">
-					<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-07.jpg" alt="">
-					<div class="tt-description">
-						<div class="tt-description-wrapper">
-							<div class="tt-background"></div>
-							<div class="tt-title-small">FALL-WINTER CLEARANCE SALES</div>
-							<div class="tt-title-large">GET UP TO <span class="tt-base-color">50% OFF</span></div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<a href="listing-left-column.html" class="tt-promo-box">
-					<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-08.jpg" alt="">
-					<div class="tt-description">
-						<div class="tt-description-wrapper">
-							<div class="tt-background"></div>
-							<div class="tt-title-small">SUMMER <span class="tt-base-color">2019</span></div>
-							<div class="tt-title-large">NEW ARRIVALS</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-sm-6 col-md-4">
-				<a href="listing-left-column.html" class="tt-promo-box">
-					<img src="catalog\view\theme\wokiee\img\loader.svg" data-src="image/catalog/wokiee/promo/index-promo-img-09.jpg" alt="">
-					<div class="tt-description">
-						<div class="tt-background"></div>
-						<div class="tt-description-wrapper">
-							<div class="tt-background"></div>
-							<div class="tt-title-small">NEW COLLECTION</div>
-							<div class="tt-title-large"><span class="tt-base-color">HANDBAGS</span></div>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-			 
-				 
-								
-	 
-		 
-			<div class="container-indent">
-				<div class="container container-fluid-custom-mobile-padding">
-					<div class="tt-block-title">
-												<h1 class="tt-title">BEST SELLER</h1>
-						<div class="tt-description"> TOP SALE IN THIS WEEK</div>
-					</div>
-
-										<div class="row tt-layout-product-item">
-											<div class="col-6 col-md-4 col-lg-3">
-																								
-<div class="tt-product thumbprod-center" id="product-49">
-	<div class="tt-image-box">
-		<a href="index-43.html?route=product/quickview&amp;product_id=49" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('49');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('49');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-44.html?route=product/product&amp;product_id=49">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-19-930x1163.jpg" alt="Samsung Galaxy Tab 10.1"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-19-01-930x1163.jpg" alt="Samsung Galaxy Tab 10.1"></span>							 
-			 
-				<span class="tt-label-location">
-					<span class="tt-label-new"> New </span>
-				</span>
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-45.html?route=product/category&amp;path=57">Tablets</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-44.html?route=product/product&amp;product_id=49">Samsung Galaxy Tab 10.1</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$241.99 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('49');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-43.html?route=product/quickview&amp;product_id=49" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('49');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('49');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-48">
-	<div class="tt-image-box">
-		<a href="index-39.html?route=product/quickview&amp;product_id=48" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('48');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('48');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-40.html?route=product/product&amp;product_id=48">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-07-930x1163.jpg" alt="iPod Classic"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-07-03-930x1163.jpg" alt="iPod Classic"></span>							 
-			 
-								 
-
-				 
-					<span class="tt-label-location">
-						<span class="tt-label-sale">Sale</span>
-					</span>
-							 
-		</a>
-		 
-									 
-				<div class="tt-countdown_box">
-					<div class="tt-countdown_inner">
-						<div class="tt-countdown" data-date="2021-05-15" data-year="Yrs" data-month="Mths" data-week="Wk" data-day="Day" data-hour="Hrs" data-minute="Min" data-second="Sec"></div>
-					</div>
-				</div>
-					  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-29.html?route=product/category&amp;path=20">Desktops</a></li>
-			</ul>
-							<div class="tt-rating">
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-					<i class="icon-star"></i>
-				</div>
-					</div>
-		<h2 class="tt-title"><a href="index-40.html?route=product/product&amp;product_id=48">iPod Classic</a></h2>
-		 
-			<div class="tt-price">
-				 
-					<span class="new-price">$24.80</span> <span class="old-price">$122.00</span>
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('48');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-39.html?route=product/quickview&amp;product_id=48" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('48');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('48');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-47">
-	<div class="tt-image-box">
-		<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('47');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-25.html?route=product/product&amp;product_id=47">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-930x1163.jpg" alt="HP LP3065"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-02-930x1163.jpg" alt="HP LP3065"></span>							 
-			 
-				<span class="tt-label-location">
-					<span class="tt-label-new"> New </span>
-				</span>
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-25.html?route=product/product&amp;product_id=47">HP LP3065</a></h2>
+		<h2 class="tt-title"><a href="index-79.html?route=product/product&amp;product_id=41">iMac</a></h2>
 		 
 			<div class="tt-price">
 				 
@@ -1828,227 +1584,21 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 				<div class="tt-row-btn">
 					 
 					  					 
-						<a onclick="cart.add('47');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+						<a onclick="cart.add('41');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
 					 
 				</div>
 						<div class="tt-row-btn">
-				<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				<a href="index-54.html?route=product/quickview&amp;product_id=41" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
 				 
-					<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist"></a>
+					<a href="javascript:wishlist.add('41');" class="tt-btn-wishlist"></a>
 								 
-					<a href="javascript:compare.add('47');" class="tt-btn-compare"></a>
+					<a href="javascript:compare.add('41');" class="tt-btn-compare"></a>
 							</div>
 		</div>
 	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-46">
-	<div class="tt-image-box">
-		<a href="index-46.html?route=product/quickview&amp;product_id=46" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('46');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('46');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-47.html?route=product/product&amp;product_id=46">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-21-930x1163.jpg" alt="Sony VAIO"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-21-03-930x1163.jpg" alt="Sony VAIO"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-47.html?route=product/product&amp;product_id=46">Sony VAIO</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$1,202.00 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('46');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-46.html?route=product/quickview&amp;product_id=46" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('46');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('46');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-45">
-	<div class="tt-image-box">
-		<a href="index-48.html?route=product/quickview&amp;product_id=45" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('45');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('45');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-49.html?route=product/product&amp;product_id=45">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-15-930x1163.jpg" alt="MacBook Pro"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-15-01-930x1163.jpg" alt="MacBook Pro"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-49.html?route=product/product&amp;product_id=45">MacBook Pro</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$2,000.00 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('45');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-48.html?route=product/quickview&amp;product_id=45" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('45');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('45');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-44">
-	<div class="tt-image-box">
-		<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('44');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-36.html?route=product/product&amp;product_id=44">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-930x1163.jpg" alt="MacBook Air"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-02-930x1163.jpg" alt="MacBook Air"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-36.html?route=product/product&amp;product_id=44">MacBook Air</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$1,202.00 
-				 
-			</div>
-				 
-		 
-			<div class="tt-option-block">
-				<ul class="tt-options-swatch">
-											<li class=""><a class="options-color" style="background-image: url(image/catalog/color3.png)" href="#"></a></li>
-									</ul>
-			</div>
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('44');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('44');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
-<div class="tt-product thumbprod-center" id="product-43">
-	<div class="tt-image-box">
-		<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
-		 
-			<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
-				 
-			<a href="javascript:compare.add('43');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
-				<a href="index-33.html?route=product/product&amp;product_id=43">
-			 
-				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-930x1163.jpg" alt="MacBook"></span>
-																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-02-930x1163.jpg" alt="MacBook"></span>							 
-			 
-		</a>
-		  
-	</div>
-	<div class="tt-description">
-		<div class="tt-row">
-			<ul class="tt-add-info">
-				 
-				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
-			</ul>
-					</div>
-		<h2 class="tt-title"><a href="index-33.html?route=product/product&amp;product_id=43">MacBook</a></h2>
-		 
-			<div class="tt-price">
-				 
-					$602.00 
-				 
-			</div>
-				 
-				<div class="tt-product-inside-hover">
-			 
-				<div class="tt-row-btn">
-					 
-					  					 
-						<a onclick="cart.add('43');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
-					 
-				</div>
-						<div class="tt-row-btn">
-				<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
-				 
-					<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist"></a>
-								 
-					<a href="javascript:compare.add('43');" class="tt-btn-compare"></a>
-							</div>
-		</div>
-	</div>
-</div>																								</div>
-									<div class="col-6 col-md-4 col-lg-3">
-																	
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
 <div class="tt-product thumbprod-center" id="product-42">
 	<div class="tt-image-box">
 		<a href="index-28.html?route=product/quickview&amp;product_id=42" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
@@ -2118,166 +1668,429 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 							</div>
 		</div>
 	</div>
-</div>							 
-						</div>
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-43">
+	<div class="tt-image-box">
+		<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		 
+			<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+				 
+			<a href="javascript:compare.add('43');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-33.html?route=product/product&amp;product_id=43">
+			 
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-930x1163.jpg" alt="MacBook"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-13-02-930x1163.jpg" alt="MacBook"></span>							 
+			 
+		</a>
+		  
+	</div>
+	<div class="tt-description">
+		<div class="tt-row">
+			<ul class="tt-add-info">
+				 
+				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
+			</ul>
 					</div>
-				</div>
-			</div>
-			 
-
-			 
+		<h2 class="tt-title"><a href="index-33.html?route=product/product&amp;product_id=43">MacBook</a></h2>
+		 
+			<div class="tt-price">
 				 
-        <div class="container-indent">
-        <div class="container">
-            <div class="tt-block-title">
-                                <h2 class="tt-title">LATEST FROM BLOG</h2>
-                <div class="tt-description"> THE FRESHEST AND MOST EXCITING NEWS</div>
-            </div>
-            <div class="tt-blog-thumb-list">
-                <div class="row">
-                                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="tt-blog-thumb">
-                                                            <div class="tt-img"><a href="index-9.html?route=blog/article&amp;article_id=27" target="_blank"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/blog/blog-post-img-06-930x658.jpg" alt=""></a></div>
-                             
-                            <div class="tt-title-description">
-                                <div class="tt-background"></div>
-                                <div class="tt-tag">
-                                    <a href="index-9.html?route=blog/article&amp;article_id=27">Fashion</a>
-                                </div>
-                                <div class="tt-title">
-                                    <a href="index-9.html?route=blog/article&amp;article_id=27">Donec ut nunc sit amet urna aliquet</a>
-                                </div>
-                                <p>
-                                    Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons,...
-                                </p>
-                                <div class="tt-meta">
-                                    <div class="tt-autor">
-                                        September 16, 2015
-                                    </div>
-                                    <div class="tt-comments">
-                                        <a href="index-9.html?route=blog/article&amp;article_id=27"><i class="tt-icon icon-f-88"></i>1</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="tt-blog-thumb">
-                                                            <div class="tt-img"><a href="index-10.html?route=blog/article&amp;article_id=18" target="_blank"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/blog/blog-post-img-04-930x658.jpg" alt=""></a></div>
-                             
-                            <div class="tt-title-description">
-                                <div class="tt-background"></div>
-                                <div class="tt-tag">
-                                    <a href="index-10.html?route=blog/article&amp;article_id=18">Fashion</a>
-                                </div>
-                                <div class="tt-title">
-                                    <a href="index-10.html?route=blog/article&amp;article_id=18">Nulla dictum consequat lorem ac vehicula</a>
-                                </div>
-                                <p>
-                                    Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons,...
-                                </p>
-                                <div class="tt-meta">
-                                    <div class="tt-autor">
-                                        September 16, 2015
-                                    </div>
-                                    <div class="tt-comments">
-                                        <a href="index-10.html?route=blog/article&amp;article_id=18"><i class="tt-icon icon-f-88"></i>1</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
-                        <div class="tt-blog-thumb">
-                                                            <div class="tt-img"><a href="index-12.html?route=blog/article&amp;article_id=65" target="_blank"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/blog/blog-post-img-02-930x658.jpg" alt=""></a></div>
-                             
-                            <div class="tt-title-description">
-                                <div class="tt-background"></div>
-                                <div class="tt-tag">
-                                    <a href="index-12.html?route=blog/article&amp;article_id=65">Fashion</a>
-                                </div>
-                                <div class="tt-title">
-                                    <a href="index-12.html?route=blog/article&amp;article_id=65">Etiam ac aliquet ex nec volutpat orci</a>
-                                </div>
-                                <p>
-                                    Cras ut tortor mollis, tristique magna feugiat, suscipit ligula. Mauris at nibh ornare, congue neque et, vestibulum nibh. Donec bi...
-                                </p>
-                                <div class="tt-meta">
-                                    <div class="tt-autor">
-                                        September 12, 2015
-                                    </div>
-                                    <div class="tt-comments">
-                                        <a href="index-12.html?route=blog/article&amp;article_id=65"><i class="tt-icon icon-f-88"></i>1</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    </div>
-            </div>
-        </div>
-    </div>
-
-			 
+					$602.00 
 				 
-		<div class="container-indent">
-		<div class="container-fluid">
-			<div class="tt-block-title">
-				<h2 class="tt-title"><a target="_blank" href="https://www.instagram.com/wokieeshop/">@ FOLLOW</a> US ON</h2>
-				<div class="tt-description">INSTAGRAM</div>
 			</div>
-			<div class="row">
-				<div id="instafeed" class="instafeed-fluid" data-accesstoken="8626857013.dd09515.0fcd8351c65140d48f5a340693af1c3f" data-clientid="dd095157744c4bd0a67181fc4906e5b6" data-userid="8626857013" data-limitimg="6">
-				</div>
-			</div>
-		</div>
-	</div>
-
-			 
 				 
-		<div class="container-indent">
-		<div class="container">
-			<div class="row tt-services-listing">
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<a href="#" class="tt-services-block">
-						<div class="tt-col-icon">
-							<i class="icon-f-48"></i>
-						</div>
-						<div class="tt-col-description">
-							<h4 class="tt-title">FREE SHIPPING</h4>
-							<p>Free shipping on all US order or order above $99</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<a href="#" class="tt-services-block">
-						<div class="tt-col-icon">
-							<i class="icon-f-35"></i>
-						</div>
-						<div class="tt-col-description">
-							<h4 class="tt-title">SUPPORT 24/7</h4>
-							<p>Contact us 24 hours a day, 7 days a week</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					<a href="#" class="tt-services-block">
-						<div class="tt-col-icon">
-							<i class="icon-e-09"></i>
-						</div>
-						<div class="tt-col-description">
-							<h4 class="tt-title">30 DAYS RETURN</h4>
-							<p>Simply return it within 24 days for an exchange.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
+				<div class="tt-product-inside-hover">
+			 
+				<div class="tt-row-btn">
 					 
+					  					 
+						<a onclick="cart.add('43');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+					 
+				</div>
+						<div class="tt-row-btn">
+				<a href="index-32.html?route=product/quickview&amp;product_id=43" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				 
+					<a href="javascript:wishlist.add('43');" class="tt-btn-wishlist"></a>
+								 
+					<a href="javascript:compare.add('43');" class="tt-btn-compare"></a>
+							</div>
+		</div>
 	</div>
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-44">
+	<div class="tt-image-box">
+		<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		 
+			<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+				 
+			<a href="javascript:compare.add('44');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-36.html?route=product/product&amp;product_id=44">
+			 
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-930x1163.jpg" alt="MacBook Air"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-14-02-930x1163.jpg" alt="MacBook Air"></span>							 
+			 
+		</a>
+		  
+	</div>
+	<div class="tt-description">
+		<div class="tt-row">
+			<ul class="tt-add-info">
+				 
+				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
+			</ul>
+					</div>
+		<h2 class="tt-title"><a href="index-36.html?route=product/product&amp;product_id=44">MacBook Air</a></h2>
+		 
+			<div class="tt-price">
+				 
+					$1,202.00 
+				 
+			</div>
+				 
+		 
+			<div class="tt-option-block">
+				<ul class="tt-options-swatch">
+											<li class=""><a class="options-color" style="background-image: url(image/catalog/color3.png)" href="#"></a></li>
+									</ul>
+			</div>
+				<div class="tt-product-inside-hover">
+			 
+				<div class="tt-row-btn">
+					 
+					  					 
+						<a onclick="cart.add('44');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+					 
+				</div>
+						<div class="tt-row-btn">
+				<a href="index-35.html?route=product/quickview&amp;product_id=44" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				 
+					<a href="javascript:wishlist.add('44');" class="tt-btn-wishlist"></a>
+								 
+					<a href="javascript:compare.add('44');" class="tt-btn-compare"></a>
+							</div>
+		</div>
+	</div>
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-45">
+	<div class="tt-image-box">
+		<a href="index-48.html?route=product/quickview&amp;product_id=45" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		 
+			<a href="javascript:wishlist.add('45');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+				 
+			<a href="javascript:compare.add('45');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-49.html?route=product/product&amp;product_id=45">
+			 
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-15-930x1163.jpg" alt="MacBook Pro"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-15-01-930x1163.jpg" alt="MacBook Pro"></span>							 
+			 
+		</a>
+		  
+	</div>
+	<div class="tt-description">
+		<div class="tt-row">
+			<ul class="tt-add-info">
+				 
+				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
+			</ul>
+					</div>
+		<h2 class="tt-title"><a href="index-49.html?route=product/product&amp;product_id=45">MacBook Pro</a></h2>
+		 
+			<div class="tt-price">
+				 
+					$2,000.00 
+				 
+			</div>
+				 
+				<div class="tt-product-inside-hover">
+			 
+				<div class="tt-row-btn">
+					 
+					  					 
+						<a onclick="cart.add('45');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+					 
+				</div>
+						<div class="tt-row-btn">
+				<a href="index-48.html?route=product/quickview&amp;product_id=45" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				 
+					<a href="javascript:wishlist.add('45');" class="tt-btn-wishlist"></a>
+								 
+					<a href="javascript:compare.add('45');" class="tt-btn-compare"></a>
+							</div>
+		</div>
+	</div>
+</div>				</div>
+							<div class="col-2 col-md-4 col-lg-3">
+					
+<div class="tt-product thumbprod-center" id="product-47">
+	<div class="tt-image-box">
+		<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView" data-tooltip=" Quickview " data-tposition="left"></a>
+		 
+			<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist" data-tooltip=" Add to wishlist " data-tposition="left"></a>
+				 
+			<a href="javascript:compare.add('47');" class="tt-btn-compare" data-tooltip=" Add to compare " data-tposition="left"></a>
+				<a href="index-25.html?route=product/product&amp;product_id=47">
+			 
+				<span class="tt-img"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-930x1163.jpg" alt="HP LP3065"></span>
+																																		<span class="tt-img-roll-over"><img src="catalog\view\theme\wokiee\img\loader.svg" data-src="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-03-02-930x1163.jpg" alt="HP LP3065"></span>							 
+			 
+				<span class="tt-label-location">
+					<span class="tt-label-new"> New </span>
+				</span>
+			 
+		</a>
+		  
+	</div>
+	<div class="tt-description">
+		<div class="tt-row">
+			<ul class="tt-add-info">
+				 
+				<li><a href="index-31.html?route=product/category&amp;path=18">Laptops &amp; Notebooks</a></li>
+			</ul>
+					</div>
+		<h2 class="tt-title"><a href="index-25.html?route=product/product&amp;product_id=47">HP LP3065</a></h2>
+		 
+			<div class="tt-price">
+				 
+					$122.00 
+				 
+			</div>
+				 
+				<div class="tt-product-inside-hover">
+			 
+				<div class="tt-row-btn">
+					 
+					  					 
+						<a onclick="cart.add('47');" class="tt-btn-addtocart thumbprod-button-bg">Add to Cart</a>
+					 
+				</div>
+						<div class="tt-row-btn">
+				<a href="index-30.html?route=product/quickview&amp;product_id=47" class="tt-btn-quickview" data-toggle="modal" data-target="#ModalquickView"></a>
+				 
+					<a href="javascript:wishlist.add('47');" class="tt-btn-wishlist"></a>
+								 
+					<a href="javascript:compare.add('47');" class="tt-btn-compare"></a>
+							</div>
+		</div>
+	</div>
+</div>				</div>
+					</div>
+	</div>
+</div>
 
+<script type="text/javascript"><!--
+$('#product select[name=\'recurring_id\'], #product input[name="quantity"]').change(function(){
+	$.ajax({
+		url: 'index.php?route=product/product/getRecurringDescription',
+		type: 'post',
+		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
+		dataType: 'json',
+		beforeSend: function() {
+			$('#recurring-description').html('');
+		},
+		success: function(json) {
+			$('.alert, .text-danger').remove();
+			
+			if (json['success']) {
+				$('#recurring-description').html(json['success']);
+			}
+		}
+	});
+});
+//--></script> 
+
+<script type="text/javascript"><!--
+$('#product #button-cart').on('click', function() {
+	$.ajax({
+		url: 'index.php?route=checkout/cart/add',
+		type: 'post',
+		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		dataType: 'json',
+		beforeSend: function() {
+			$('#product #button-cart span').html($('#product #button-cart').attr("data-loading-text"));
+		},
+		complete: function() {
+			$('#product #button-cart span').html($('#product #button-cart').attr("data-original-text"));
+		},
+		success: function(json) {
+			$('#product .alert, #product .text-danger').remove();
+			$('#product .form-group').removeClass('has-error');
+
+			if (json['error']) {
+				if (json['error']['option']) {
+					for (i in json['error']['option']) {
+						var element = $('#product #input-option' + i.replace('_', '-'));
+						
+						if (element.parent().hasClass('input-group')) {
+							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						} else {
+							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						}
+					}
+				}
+				
+				if (json['error']['recurring']) {
+					$('#product select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+				}
+				
+				// Highlight any found errors
+				$('#product .text-danger').parent().addClass('has-error');
+			}
+			
+			if (json['success']) {
+              var product_id = $('#product input[name="product_id"]').val();
+              $('#ModalquickView').modal('hide');
+              $('#modalAddToCartProduct').modal('show');
+              $('#modalAddToCartProduct .tt-img img').attr('src', $("#product").find(".zoomGalleryActive img").attr("src"));
+              $('#modalAddToCartProduct .tt-title').html($("#product").find(".tt-title").html());
+              $('#modalAddToCartProduct .tt-product-total .tt-price').html($("#product").find(".tt-price").html());
+              $('#modalAddToCartProduct .tt-qty span').html($('#product input[name="quantity"]').val());
+              $('#modalAddToCartProduct .tt-cart-total .tt-price').html(' ').load('index.php?route=common/cart/info #total_amount_ajax');
+              $('#modalAddToCartProduct .tt-cart-total .text-total').text($('#modalAddToCartProduct .tt-cart-total .text-total').text().replace(/[0-9]+/, parseInt($('#total_count_ajax').html())+parseInt($('#product input[name="quantity"]').val())));
+              $('#cart_block #cart_content, .tt-stuck-parent-cart #cart_content').load('index.php?route=common/cart/info #cart_content_ajax');
+              $('#cart_block .tt-badge-cart, .tt-stuck-parent-cart .tt-badge-cart').load('index.php?route=common/cart/info #total_count_ajax');
+			}
+		},
+     	error: function(xhr, ajaxOptions, thrownError) {
+     	    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+     	}
+	});
+});
+//--></script> 
+<script type="text/javascript">
+$('#product button[id^=\'button-upload\']').on('click', function() {
+	var node = this;
+	
+	$('#form-upload').remove();
+	
+	$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+	
+	$('#form-upload input[name=\'file\']').trigger('click');
+	
+	timer = setInterval(function() {
+		if ($('#form-upload input[name=\'file\']').val() != '') {
+			clearInterval(timer);
+			
+			$.ajax({
+				url: 'index.php?route=tool/upload',
+				type: 'post',
+				dataType: 'json',
+				data: new FormData($('#form-upload')[0]),
+				cache: false,
+				contentType: false,
+				processData: false,
+				beforeSend: function() {
+					$(node).button('loading');
+				},
+				complete: function() {
+					$(node).button('reset');
+				},
+				success: function(json) {
+					$('.text-danger').remove();
+					
+					if (json['error']) {
+						$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+					}
+					
+					if (json['success']) {
+						alert(json['success']);
+						
+						$(node).parent().find('input').attr('value', json['code']);
+					}
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+			});
+		}
+	}, 500);
+});
+</script> 
+<script type="text/javascript"><!--
+$('#review').delegate('.pagination a', 'click', function(e) {
+	e.preventDefault();
+	
+    $('#review').fadeOut('slow');
+        
+    $('#review').load(this.href);
+    
+    $('#review').fadeIn('slow');
+});         
+
+$('#review').load('index.php?route=product/product/review&product_id=31');
+
+$('#button-review').on('click', function() {
+    $.ajax({
+        url: 'index.php?route=product/product/write&product_id=31',
+        type: 'post',
+        dataType: 'json',
+        data: $("#form-review").serialize(),
+        beforeSend: function() {
+            $('#button-review').button('loading');
+        },
+        complete: function() {
+            $('#button-review').button('reset');
+        },
+        success: function(json) {
+			$('.alert-success, .alert-danger').remove();
+            
+			if (json['error']) {
+                $('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+            }
+            
+            if (json['success']) {
+                $('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+                                
+                $('input[name=\'name\']').val('');
+                $('textarea[name=\'text\']').val('');
+                $('input[name=\'rating\']:checked').prop('checked', false);
+            }
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+var ajax_price = function() {
+	$.ajax({
+		type: 'POST',
+		url: 'index.php?route=product/liveprice/index',
+		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		dataType: 'json',
+			success: function(json) {
+			if (json.success) {
+				change_price('#product #price-special', json.new_price.special);
+				change_price('#product #price-tax', json.new_price.tax);
+				change_price('#product #price-old', json.new_price.price);
+			}
+		}
+	});
+}
+
+var change_price = function(id, new_price) {
+	$(id).html(new_price);
+}
+
+$('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\'], #product input[type=\'checkbox\'], #product select, #product textarea, #product input[name=\'quantity\']').on('change', function() {
+	ajax_price();
+});
+</script>
+
+ 
+		
+		 
+	 
+
+		 
+	
+											 
+					  
+	</div>
  
                     
                     
@@ -2292,7 +2105,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-9">
-					<div class="tt-newsletter-layout-01" id="newsletter800">
+					<div class="tt-newsletter-layout-01" id="newsletter435">
 						<div class="tt-newsletter">
 							<div class="tt-mobile-collapse">
 								<h4 class="tt-collapse-title">
@@ -2328,9 +2141,9 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		function Unsubscribe() {
 			$.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe', 
 				{ 
-					email: $('#newsletter800 .email').val() 
+					email: $('#newsletter435 .email').val() 
 				}, function (e) {
-					$('#newsletter800 .email').val('');
+					$('#newsletter435 .email').val('');
 					alert(e.message);
 				}
 			, 'json');
@@ -2340,20 +2153,20 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 			 
 			$.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/subscribe', 
 				{ 
-					email: $('#newsletter800 .email').val() 
+					email: $('#newsletter435 .email').val() 
 				}, function (e) {
 					if(e.error === 1) {
 						var r = confirm(e.message);
 						if (r == true) {
 						    $.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe', { 
-						    	email: $('#newsletter800 .email').val() 
+						    	email: $('#newsletter435 .email').val() 
 						    }, function (e) {
-						    	$('#newsletter800 .email').val('');
+						    	$('#newsletter435 .email').val('');
 						    	alert(e.message);
 						    }, 'json');
 						}
 					} else {
-						$('#newsletter800 .email').val('');
+						$('#newsletter435 .email').val('');
 						alert(e.message);
 					}
 				}
@@ -2361,9 +2174,9 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 			 
 		}
 		
-		$('#newsletter800 .subscribe').click(Subscribe);
-		$('#newsletter800 .unsubscribe').click(Unsubscribe);
-		$('#newsletter800 .email').keypress(function (e) {
+		$('#newsletter435 .subscribe').click(Subscribe);
+		$('#newsletter435 .unsubscribe').click(Unsubscribe);
+		$('#newsletter435 .email').keypress(function (e) {
 		    if (e.which == 13) {
 		        Subscribe();
 		    }
@@ -2381,7 +2194,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
                 
            
 
-     <div class="advanced-grid advanced-grid-7766136  " style="margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;">
+     <div class="advanced-grid advanced-grid-88177960  " style="margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;">
            
           <div style=""> 
                <div style="padding-top: 0px;padding-left: 0px;padding-bottom: 0px;padding-right: 0px;">

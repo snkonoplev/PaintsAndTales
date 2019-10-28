@@ -18,8 +18,6 @@
 		 
 		
 		 
-			<link href="index.htm" rel="canonical">
-		 
 			<link href="image\catalog\favicon.png" rel="icon">
 		 
 		
@@ -2292,7 +2290,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-9">
-					<div class="tt-newsletter-layout-01" id="newsletter800">
+					<div class="tt-newsletter-layout-01" id="newsletter1776">
 						<div class="tt-newsletter">
 							<div class="tt-mobile-collapse">
 								<h4 class="tt-collapse-title">
@@ -2328,9 +2326,9 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 		function Unsubscribe() {
 			$.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe', 
 				{ 
-					email: $('#newsletter800 .email').val() 
+					email: $('#newsletter1776 .email').val() 
 				}, function (e) {
-					$('#newsletter800 .email').val('');
+					$('#newsletter1776 .email').val('');
 					alert(e.message);
 				}
 			, 'json');
@@ -2340,20 +2338,20 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 			 
 			$.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/subscribe', 
 				{ 
-					email: $('#newsletter800 .email').val() 
+					email: $('#newsletter1776 .email').val() 
 				}, function (e) {
 					if(e.error === 1) {
 						var r = confirm(e.message);
 						if (r == true) {
 						    $.post('http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe', { 
-						    	email: $('#newsletter800 .email').val() 
+						    	email: $('#newsletter1776 .email').val() 
 						    }, function (e) {
-						    	$('#newsletter800 .email').val('');
+						    	$('#newsletter1776 .email').val('');
 						    	alert(e.message);
 						    }, 'json');
 						}
 					} else {
-						$('#newsletter800 .email').val('');
+						$('#newsletter1776 .email').val('');
 						alert(e.message);
 					}
 				}
@@ -2361,9 +2359,9 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
 			 
 		}
 		
-		$('#newsletter800 .subscribe').click(Subscribe);
-		$('#newsletter800 .unsubscribe').click(Unsubscribe);
-		$('#newsletter800 .email').keypress(function (e) {
+		$('#newsletter1776 .subscribe').click(Subscribe);
+		$('#newsletter1776 .unsubscribe').click(Unsubscribe);
+		$('#newsletter1776 .email').keypress(function (e) {
 		    if (e.which == 13) {
 		        Subscribe();
 		    }
@@ -2381,7 +2379,7 @@ jsFileLocation:"//demo2.ninethemes.net/wokiee/opencart/1/system/config/revslider
                 
            
 
-     <div class="advanced-grid advanced-grid-7766136  " style="margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;">
+     <div class="advanced-grid advanced-grid-121579472  " style="margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;">
            
           <div style=""> 
                <div style="padding-top: 0px;padding-left: 0px;padding-bottom: 0px;padding-right: 0px;">

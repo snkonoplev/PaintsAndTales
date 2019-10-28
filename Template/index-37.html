@@ -1,0 +1,257 @@
+   
+<div class="tt-modal-quickview desctope">
+  <div class="row">
+    <div class="col-12 col-md-5 col-lg-6">
+      <div class="tt-mobile-product-slider arrow-location-center">
+         
+          <div><img src="image\cache\catalog\wokiee\product\product-06-930x1161.jpg" title="iPhone" alt="iPhone" id="image" itemprop="image" data-zoom-image="http://demo2.ninethemes.net/wokiee/opencart/1/image/cache/catalog/wokiee/product/product-06-930x1163.jpg"></div>
+                 
+           <div><img src="image\cache\catalog\wokiee\product\product-06-04-930x1163.jpg" title="iPhone" alt="iPhone"></div>
+         
+           <div><img src="image\cache\catalog\wokiee\product\product-06-930x1163.jpg" title="iPhone" alt="iPhone"></div>
+         
+           <div><img src="image\cache\catalog\wokiee\product\product-06-03-930x1163.jpg" title="iPhone" alt="iPhone"></div>
+         
+           <div><img src="image\cache\catalog\wokiee\product\product-06-02-930x1163.jpg" title="iPhone" alt="iPhone"></div>
+         
+      </div>
+    </div>
+    <div class="col-12 col-md-7 col-lg-6">
+      <div class="tt-product-single-info">
+        <div class="tt-add-info">
+          <ul>
+            <li><span>Product Code:</span> product 11</li>
+            <li><span>Availability:</span> In Stock</li>
+          </ul>
+        </div>
+        <h2 class="tt-title">iPhone</h2>
+        <div class="tt-price">
+           
+            <span id="price-old">$123.20</span>
+           
+        </div>
+        <div class="tt-additional-price">
+           
+          <span class="price-tax">Ex Tax: <span id="price-tax">$101.00</span></span><br>
+           
+           
+           
+        </div>
+         
+          <div class="tt-review">
+            <div class="tt-rating">
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star"></i>
+              <i class="icon-star-empty"></i>
+            </div>
+            <a href="index-38.html?route=product/product&product_id=40">(1 reviews)</a>
+          </div>
+                <div class="tt-wrapper">
+          
+	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all y...
+        </div>
+        <div class="tt-swatches-container">
+           
+          <div class="options">
+             
+             
+             
+                            <div class="tt-wrapper" id="input-option234">
+                <div class="tt-title-options"><label class="control-label" for="input-option234">Size:</label></div>
+                <div class="form-group required">
+            <ul class="tt-options-swatch options-large">
+               
+                                  <li><a href="javascript:;">
+                    <input type="radio" class="d-none" name="option[234]" value="46">
+                    S
+                  </a></li>
+                               
+                                  <li><a href="javascript:;">
+                    <input type="radio" class="d-none" name="option[234]" value="47">
+                    M
+                  </a></li>
+                               
+                                  <li><a href="javascript:;">
+                    <input type="radio" class="d-none" name="option[234]" value="48">
+                    L
+                  </a></li>
+                                            <script type="text/javascript">
+                $(document).ready(function () {
+                  $("#input-option234 .tt-options-swatch li a").click(function () {
+                    $(this).find('input').prop( "checked", true ).change();
+                    $("#input-option234 .tt-options-swatch li").removeClass("active");
+                    $(this).parent().addClass("active");
+                  });
+                }); 
+              </script>
+            </ul>
+              </div>
+            </div>
+                         
+             
+             
+             
+             
+               
+               
+               
+             
+          </div>
+           
+          
+           
+        </div>
+
+                 
+          <div class="tt-wrapper">
+            <div class="tt-row-custom-01">
+              <div class="col-item">
+                <div class="tt-input-counter style-01">
+                  <span class="minus-btn" id="q_down"></span>
+                  <input type="text" name="quantity" id="quantity_wanted" size="200" value="1">
+                  <span class="plus-btn" id="q_up"></span>
+                </div>
+              </div>
+              <div class="col-item">
+               <input type="hidden" name="product_id" value="40">
+               <a href="javascript:;" class="btn btn-lg" id="button-cart" data-loading-text="Loading..." data-original-text="Add to Cart"><i class="icon-f-39"></i><span>Add to Cart</span></a>
+              </div>
+            </div>
+          </div>
+              </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.tt-modal-quickview #q_up').click(function(){
+      var q_val_up=parseInt($(".tt-modal-quickview input#quantity_wanted").val());
+      if(isNaN(q_val_up)) {
+        q_val_up=0;
+      }
+      $(".tt-modal-quickview input#quantity_wanted").val(q_val_up+1).keyup(); 
+      return false; 
+    });
+    
+    $('.tt-modal-quickview #q_down').click(function(){
+      var q_val_up=parseInt($(".tt-modal-quickview input#quantity_wanted").val());
+      if(isNaN(q_val_up)) {
+        q_val_up=0;
+      }
+      
+      if(q_val_up>1) {
+        $(".tt-modal-quickview input#quantity_wanted").val(q_val_up-1).keyup();
+      } 
+      return false; 
+    });
+  });
+</script>
+<script type="text/javascript"><!--
+$('.tt-modal-quickview select[name=\'recurring_id\'], .tt-modal-quickview input[name="quantity"]').change(function(){
+    $.ajax({
+         url: 'index.php?route=product/product/getRecurringDescription',
+         type: 'post',
+         data: $('.tt-modal-quickview input[name=\'product_id\'], .tt-modal-quickview input[name=\'quantity\'], .tt-modal-quickview select[name=\'recurring_id\']'),
+         dataType: 'json',
+         beforeSend: function() {
+              $('#recurring-description').html('');
+         },
+         success: function(json) {
+              $('.alert, .text-danger').remove();
+              
+              if (json['success']) {
+                   $('#recurring-description').html(json['success']);
+              }
+         }
+    });
+});
+//--></script> 
+ <script type="text/javascript"><!--
+ $('.tt-modal-quickview .datetimepicker-date').datetimepicker({
+      pickTime: false
+ });
+
+ $('.tt-modal-quickview .datetimepicker-datetime').datetimepicker({
+      pickDate: true,
+      pickTime: true
+ });
+
+ $('.tt-modal-quickview .datetimepicker-time').datetimepicker({
+      pickDate: false
+ });
+           
+ $('.tt-modal-quickview button[id^=\'button-upload\']').on('click', function() {
+      var node = this;
+      
+      $('#form-upload').remove();
+      
+      $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+      
+      $('#form-upload input[name=\'file\']').trigger('click');
+      
+      timer = setInterval(function() {
+           if ($('#form-upload input[name=\'file\']').val() != '') {
+                clearInterval(timer);
+                
+                $.ajax({
+                     url: 'index.php?route=tool/upload',
+                     type: 'post',
+                     dataType: 'json',
+                     data: new FormData($('#form-upload')[0]),
+                     cache: false,
+                     contentType: false,
+                     processData: false,
+                     beforeSend: function() {
+                          $(node).button('loading');
+                     },
+                     complete: function() {
+                          $(node).button('reset');
+                     },
+                     success: function(json) {
+                          $('.text-danger').remove();
+                          
+                          if (json['error']) {
+                               $(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+                          }
+                          
+                          if (json['success']) {
+                               alert(json['success']);
+                               
+                               $(node).parent().find('input').attr('value', json['code']);
+                          }
+                     },
+                     error: function(xhr, ajaxOptions, thrownError) {
+                          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                     }
+                });
+           }
+      }, 500);
+ });
+ //--></script> 
+<script type="text/javascript">
+var ajax_price = function() {
+    $.ajax({
+         type: 'POST',
+         url: 'index.php?route=product/liveprice/index',
+         data: $('.tt-modal-quickview input[type=\'text\'], .tt-modal-quickview input[type=\'hidden\'], .tt-modal-quickview input[type=\'radio\']:checked, .tt-modal-quickview input[type=\'checkbox\']:checked, .tt-modal-quickview select, .tt-modal-quickview textarea'),
+         dataType: 'json',
+              success: function(json) {
+              if (json.success) {
+                   change_price('.tt-modal-quickview #price-special', json.new_price.special);
+                   change_price('.tt-modal-quickview #price-tax', json.new_price.tax);
+                   change_price('.tt-modal-quickview #price-old', json.new_price.price);
+              }
+         }
+    });
+}
+
+var change_price = function(id, new_price) {
+    $(id).html(new_price);
+}
+
+$('.tt-modal-quickview input[type=\'text\'], .tt-modal-quickview input[type=\'hidden\'], .tt-modal-quickview input[type=\'radio\'], .tt-modal-quickview input[type=\'checkbox\'], .tt-modal-quickview select, .tt-modal-quickview textarea, .tt-modal-quickview input[name=\'quantity\']').on('change', function() {
+    ajax_price();
+});
+</script>
