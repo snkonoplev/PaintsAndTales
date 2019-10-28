@@ -1,162 +1,384 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PaintsAndTales.WebApp</title>
-    <link rel="stylesheet" href="~/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/shop.css" />
-    <link rel="stylesheet" href="~/css/fontawesome-all.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" />
-    <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+	<meta charset="utf-8" />
+	<link href="~/image/catalog/favicon.png" rel="icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - PaintsAndTales.WebApp</title>
+	<link rel="stylesheet" type="text/css" href="~/catalog/view/theme/wokiee/css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="~/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.min.js"></script>
 </head>
-<body>
-	<!-- header -->
+<body class="">
+	<div id="loader-wrapper">
+		<div id="loader">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+	</div>
 	<header>
-		<div class="container">
-			<!-- top nav -->
-			<nav class="top_nav d-flex pt-3 pb-1">
-				<!-- logo -->
-				<h1>
-					<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CK</a>
-				</h1>
-				<!-- //logo -->
-				<div class="w3ls_right_nav ml-auto d-flex">
-					<div class="nav-icon d-flex">
-						<!-- sigin and sign up -->
-						<a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
-							<i class="far fa-user"></i>
-						</a>
-						<!-- sigin and sign up -->
-						<!-- shopping cart -->
-						<div class="cart-mainf">
-							<div class="hubcart hubcart2 cart cart box_1">
-								<form action="#" method="post">
-									<input type="hidden" name="cmd" value="_cart">
-									<input type="hidden" name="display" value="1">
-									<button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart">
-										<i class="fas fa-shopping-bag"></i>
-									</button>
-								</form>
-							</div>
+		<!-- tt-mobile-header -->
+		<div class="tt-mobile-header">
+			<div class="container-fluid">
+				<div class="tt-header-row">
+					<div class="tt-mobile-parent-menu">
+						<div class="tt-menu-toggle">
+							<i class="icon-03"></i>
 						</div>
-						<!-- //shopping cart ends here -->
+					</div>
+					<!-- search -->
+					<div class="tt-mobile-parent-search tt-parent-box"></div>
+					<!-- /search -->
+					<!-- cart -->
+					<div class="tt-mobile-parent-cart tt-parent-box"></div>
+					<!-- /cart -->
+					<!-- account -->
+					<div class="tt-mobile-parent-account tt-parent-box"></div>
+					<!-- /account -->
+					<!-- currency -->
+					<div class="tt-mobile-parent-multi tt-parent-box"></div>
+					<!-- /currency -->
+				</div>
+			</div>
+			<div class="container-fluid tt-top-line">
+				<div class="row">
+					<div class="tt-logo-container">
+
+						<!-- Logo -->
+						<a class="tt-logo tt-logo-alignment" href="index.html?route=common/home"><img src="image\catalog\wokiee\custom\logo.png" title="Your Store" alt="Your Store"></a>
+
 					</div>
 				</div>
-			</nav>
-			<!-- //top nav -->
-			<!-- bottom nav -->
-			<nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-						aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mx-auto text-center">
-						<li class="nav-item">
-							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-								Домашняя
-								<span class="sr-only">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-								Магазин
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-								О нас
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-								Контакты
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- //bottom nav -->
+			</div>
 		</div>
-		<!-- //header container -->
-	</header>
-	<!-- //header -->
-	<div>
-			@RenderBody()
-	</div>
-	<!-- footer -->
-	<footer>
-		<div class="footerv2-w3ls">
-			<div class="footer-w3lagile-innerr">
-				<div class="footer-bottomv2 py-5">
-					<div class="container">
-						<ul class="bottom-links-agile">
-							<li>
-								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-									Домашняя
-								</a>
-							</li>
-							<li>
-								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-									Магазин
-								</a>
-							</li>
-							<li>
-								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-									О нас
-								</a>
-							</li>
-							<li>
-								<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-									Контакты
-								</a>
-							</li>
-						</ul>
-						<h3 class="text-center follow">Подписывайтесь на нас</h3>
-						<ul class="social-iconsv2 agileinfo">
-							<li>
-								<a href="#">
-									<i class="fab fa-facebook-f"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-twitter"></i>
-								</a>
-							</li>
+		<!-- tt-desktop-header -->
+		<div class="tt-desktop-header">
+			<div class="container">
+				<div class="tt-header-holder">
+					<div class="tt-col-obj tt-obj-logo">
+						<!-- Logo -->
+						<a class="tt-logo tt-logo-alignment" href="index.html?route=common/home"><img src="image\catalog\wokiee\custom\logo.png" title="Your Store" alt="Your Store"></a>
+					</div>
+					<div class="tt-col-obj tt-obj-menu">
+						<!-- tt-menu -->
+						<div class="tt-desctop-parent-menu tt-parent-box">
+							<div class="tt-desctop-menu">
+								<nav>
+									<ul>
+										<li class=' dropdown tt-megamenu-col-02 tt-submenu  selected'>
+											<a href='#' class=''>ДОМАШНЯЯ</a>
+										</li>
+										<li class='  dropdown megamenu tt-submenu '>
+											<a href='index-1.html?route=information/information&amp;information_id=7' class=''>МАГАЗИН</a>
+										</li>
+										<li class='dropdown tt-megamenu-col-01 tt-submenu   '>
+											<a href='index-8.html?route=blog/blog' class=''>О НАС</a>
+										</li>
+										<li class='dropdown tt-megamenu-col-01 tt-submenu   '>
+											<a href='index-13.html?route=extension/module/portfolio' class=''>КОНТАКТЫ</a>
+										</li>
+									</ul>
+								</nav>
+								<!-- tt-mobile menu -->
+								<nav class="panel-menu">
+									<ul>
+										<li>
+											<a href='#' class=''>ДОМАШНЯЯ</a>
+										</li>
+										<li>
+											<a href='index-1.html?route=information/information&amp;information_id=7' class=''>МАГАЗИН</a>
+										</li>
+										<li>
+											<a href='index-8.html?route=blog/blog' class=''>О НАС</a>
+										</li>
+										<li>
+											<a href='index-13.html?route=extension/module/portfolio' class=''>КОНТАКТЫ</a>
+										</li>
+									</ul>
+									<div class="mm-navbtn-names">
+										<div class="mm-closebtn">Закрыть</div>
+										<div class="mm-backbtn">Назад</div>
+									</div>
+								</nav>
+							</div>
+						</div>
+						<!-- /tt-menu -->
+					</div>
+					<div class="tt-col-obj tt-obj-options obj-move-right">
+						<!-- tt-search -->
+						<div class="tt-desctop-parent-search tt-parent-box">
+							<div class="tt-search tt-dropdown-obj">
+								<button class="tt-dropdown-toggle" data-tooltip="Поиск" data-tposition="bottom">
+									<i class="icon-f-85"></i>
+								</button>
+								<div class="tt-dropdown-menu">
+									<div class="container">
+										<form>
+											<div class="tt-col">
+												<input type="text" class="tt-search-input" placeholder="Поиск...">
+												<button class="tt-btn-search" type="submit"></button>
+											</div>
+											<div class="tt-col">
+												<button class="tt-btn-close icon-g-80"></button>
+											</div>
+											<div class="tt-info-text">
+												Что вы ищете?
+											</div>
+											<div class="search-results">
+												<ul>
+												</ul>
+												<button type="button" class="tt-view-all">Посмотреть все товары</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /tt-search -->
+						<!-- tt-cart -->
+						<div class="tt-desctop-parent-cart tt-parent-box" id="cart_block">
+							<div class="tt-cart tt-dropdown-obj">
+								<button class="tt-dropdown-toggle" data-tooltip="Корзина" data-tposition="bottom">
+									<i class="icon-f-39"></i>
+									<p class="d-none"><span id="total_amount_ajax">$0.00</span></p>
+									<span class="tt-badge-cart"><span id="total_count_ajax">0</span></span>
+								</button>
+								<div class="tt-dropdown-menu">
+									<div class="tt-mobile-add">
+										<h6 class="tt-title">Корзина</h6>
+										<button class="tt-close">Закрыть</button>
+									</div>
+									<div class="tt-dropdown-inner">
+										<div class="tt-cart-layout">
+											<div id="cart_content">
+												<div id="cart_content_ajax">
+													<a href="index-23.html?route=checkout/cart" class="tt-cart-empty">
+														<i class="icon-f-39"></i>
+														<p>Ваша корзина пуста!</p>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-							<li>
-								<a href="#">
-									<i class="fab fa-youtube"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-linkedin-in"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="fab fa-google-plus-g"></i>
-								</a>
-							</li>
+						<!-- /tt-cart -->
+						<!-- tt-account -->
+						<div class="tt-desctop-parent-account tt-parent-box">
+							<div class="tt-account tt-dropdown-obj">
+								<button class="tt-dropdown-toggle" data-tooltip="Профиль" data-tposition="bottom"><i class="icon-f-94"></i></button>
+								<div class="tt-dropdown-menu">
+									<div class="tt-mobile-add">
+										<button class="tt-close">Закрыть</button>
+									</div>
+									<div class="tt-dropdown-inner">
+										<ul>
+											<li><a href="index-26.html?route=account/login"><i class="icon-f-76"></i>Войти</a></li>
+											<li><a href="index-27.html?route=account/register"><i class="icon-f-94"></i>Регистрация</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /tt-account -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- stuck nav -->
+		<div class="tt-stuck-nav">
+			<div class="container">
+				<div class="tt-header-row ">
+					<div class="tt-stuck-parent-menu"></div>
+					<div class="tt-stuck-parent-search tt-parent-box"></div>
+					<div class="tt-stuck-parent-cart tt-parent-box"></div>
+					<div class="tt-stuck-parent-account tt-parent-box"></div>
+					<div class="tt-stuck-parent-multi tt-parent-box"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="tt-pageContent">
+		@RenderBody()
+	</div>
+	<footer>
+		<div class="tt-footer-default tt-color-scheme-02">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-9">
+						<div class="tt-newsletter-layout-01" id="newsletter800">
+							<div class="tt-newsletter">
+								<div class="tt-mobile-collapse">
+									<h4 class="tt-collapse-title">
+										Поднисывайтесь на рассылку:
+									</h4>
+									<div class="tt-collapse-content">
+										<div id="newsletterform" class="form-inline form-default">
+											<div class="form-group">
+												<input type="text" name="email" class="email form-control" placeholder="Введите свой e-mail">
+												<button type="submit" class="btn subscribe">Подписаться</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-auto">
+						<ul class="tt-social-icon">
+							<li><a class="icon-g-64" target="_blank" href="http://www.facebook.com/"></a></li>
+							<li><a class="icon-h-58" target="_blank" href="http://www.facebook.com/"></a></li>
+							<li><a class="icon-g-66" target="_blank" href="http://www.twitter.com/"></a></li>
+							<li><a class="icon-g-67" target="_blank" href="http://www.google.com/"></a></li>
+							<li><a class="icon-g-70" target="_blank" href="https://instagram.com/"></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				function Unsubscribe() {
+					$.post(
+						'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe',
+						{
+							email: $('#newsletter800 .email').val()
+						},
+						function (e) {
+							$('#newsletter800 .email').val('');
+							alert(e.message);
+						},
+						'json');
+				}
+
+				function Subscribe() {
+
+					$.post(
+						'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/subscribe',
+						{
+							email: $('#newsletter800 .email').val()
+						},
+						function (e) {
+							if (e.error === 1) {
+								var r = confirm(e.message);
+								if (r == true) {
+									$.post(
+										'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe',
+										{
+											email: $('#newsletter800 .email').val()
+										},
+										function (e) {
+											$('#newsletter800 .email').val('');
+											alert(e.message);
+										},
+										'json');
+								}
+							} else {
+								$('#newsletter800 .email').val('');
+								alert(e.message);
+							}
+						},
+						'json');
+
+				}
+
+				$('#newsletter800 .subscribe').click(Subscribe);
+				$('#newsletter800 .unsubscribe').click(Unsubscribe);
+				$('#newsletter800 .email').keypress(function (e) {
+					if (e.which == 13) {
+						Subscribe();
+					}
+				});
+			});
+		</script>
+		<div class="tt-footer-col tt-color-scheme-01">
+			<div class="container">
+				<div class="advanced-grid advanced-grid-7766136  " style="margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
+					<div style="">
+						<div style="padding-top: 0px; padding-left: 0px; padding-bottom: 0px; padding-right: 0px;">
+							<div class="row">
+								<div class="col-12 col-md-6 col-lg-2 col-xl-3">
+									<div class="tt-mobile-collapse">
+										<h4 class="tt-collapse-title">Категории</h4>
+										<div class="tt-collapse-content">
+											<ul class="tt-list">
+												<li><a href="index-2.html?route=product/category&amp;path=34">Домашняя</a></li>
+												<li><a href="index-2.html?route=product/category&amp;path=34">Магазин</a></li>
+												<li><a href="index-2.html?route=product/category&amp;path=34">О НАС</a></li>
+												<li><a href="index-2.html?route=product/category&amp;path=34">Контакты</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-2 col-xl-3">
+									<div class="tt-mobile-collapse">
+										<h4 class="tt-collapse-title">ПРОФИЛЬ</h4>
+										<div class="tt-collapse-content">
+											<ul class="tt-list">
+												<li><a href="index-26.html?route=account/login">Войти</a></li>
+												<li><a href="index-27.html?route=account/register">Регистрация</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+									<div class="tt-mobile-collapse">
+										<h4 class="tt-collapse-title">
+											О НАС
+										</h4>
+										<div class="tt-collapse-content">
+											<p>Изготавливаем наклейки для воздушных шаров любой сложности.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+									<div class="tt-newsletter">
+										<div class="tt-mobile-collapse">
+											<h4 class="tt-collapse-title">
+												Контакты
+											</h4>
+											<div class="tt-collapse-content">
+												<address>
+													<p><span>Адрес:</span> Москва, Сущевский вал 75 строение 9</p>
+													<p><span>Телефон:</span> +777 2345 7885; +777 2345 7886</p>
+													<p><span>E-mail:</span> <a href="mailto:info@mydomain.com">info@mydomain.com</a></p>
+												</address>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer>
-	<!-- //footer -->
-	<script src="~/js/jquery-2.2.3.min.js"></script>
-	<script src="~/js/responsiveslides.min.js"></script>
-	<script src="~/js/owl.carousel.js"></script>
-	<script src="~/js/minicart.js"></script>
-	<script src="~/js/move-top.js"></script>
-	<script src="~/js/easing.js"></script>
-	<script src="~/js/bootstrap.js"></script>
-	<script src="~/js/site.js" asp-append-version="true"></script>
-	@RenderSection("Scripts", required: false)
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/slick.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/perfect-scrollbar.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/panelmenu.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/instafeed.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.plugin.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/lazyload.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/bootstrap-notify.js"></script>
+	<script type="text/javascript" src="~/catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js"></script>
+	<script type="text/javascript" src="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.elevatezoom.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/air-sticky-block.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/imagesloaded.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/common.js"></script>
 </body>
 </html>
