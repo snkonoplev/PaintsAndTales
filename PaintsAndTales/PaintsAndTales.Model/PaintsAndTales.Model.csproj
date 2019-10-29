@@ -4,4 +4,21 @@
     <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20191029151819_Create.cs" />
+    <Compile Remove="Migrations\20191029151819_Create.Designer.cs" />
+    <Compile Remove="Migrations\20191029153012_Create.cs" />
+    <Compile Remove="Migrations\20191029153012_Create.Designer.cs" />
+    <Compile Remove="Migrations\20191029155402_Create.cs" />
+    <Compile Remove="Migrations\20191029155402_Create.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0-rc1.final" />
+  </ItemGroup>
+
 </Project>

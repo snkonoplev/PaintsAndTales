@@ -1,17 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using PaintsAndTales.Model;
 
 namespace PaintsAndTales.WebApp
 {
 	public class Startup
 	{
+		public static readonly ILoggerFactory LoggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(builder => { builder.AddConsole(); });
+
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -23,6 +24,16 @@ namespace PaintsAndTales.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
+
+			DbContextOptionsBuilder<ApplicationContext> optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
+			DbContextOptions<ApplicationContext> options = optionsBuilder
+				.UseMySql(Configuration.GetConnectionString("ApplicationDb"))
+				.UseLoggerFactory(LoggerFactory)
+				.Options;
+
+			services.AddSingleton(options);
+
+			services.AddDbContext<ApplicationContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
