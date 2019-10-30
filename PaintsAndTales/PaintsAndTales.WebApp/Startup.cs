@@ -34,6 +34,8 @@ namespace PaintsAndTales.WebApp
 			services.AddSingleton(options);
 
 			services.AddDbContext<ApplicationContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
+			services.AddDbContext<SoftDeletedApplicationContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
+			services.Configure<ApplicationConfig>(Configuration.GetSection("ApplicationConfig"));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

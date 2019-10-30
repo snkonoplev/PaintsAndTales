@@ -7,14 +7,17 @@
 	<div class="tt-product thumbprod-center" id="product-42">
 		<div class="tt-image-box">
 			<a href="index-4.html?route=product/product&amp;product_id=42">
-				<span class="tt-img"><img src="~/catalog/view/theme/wokiee/img/loader.svg" data-src="@Url.Action("Show","Home", new {path = image.Path})" alt="@Model.Name"></span>
+				<span class="tt-img"><img src="~/catalog/view/theme/wokiee/img/loader.svg" data-src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="@Model.Name"></span>
 			</a>
 		</div>
 		<div class="tt-description">
 			<h2 class="tt-title"><a href="index-4.html?route=product/product&amp;product_id=42">@Model.Name</a></h2>
-			<div class="tt-price">
-				<span class="new-price">₽110.00</span>
-			</div>
+			@if(Model.Prices != null && Model.Prices.Any())
+			{			
+				<div class="tt-price">
+					₽@Model.Prices.Min(a => a.Value)
+				</div>
+			}
 			<div class="tt-product-inside-hover">
 				<div class="tt-row-btn">
 					<a onclick="cart.add('42');" class="tt-btn-addtocart thumbprod-button-bg">В Корзину</a>

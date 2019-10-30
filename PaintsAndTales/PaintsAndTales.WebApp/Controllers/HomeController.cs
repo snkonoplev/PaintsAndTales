@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
 using PaintsAndTales.WebApp.Models;
@@ -14,19 +16,23 @@ namespace PaintsAndTales.WebApp.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
-		private readonly ApplicationContext _context;
+		private readonly SoftDeletedApplicationContext _context;
+		private readonly IOptions<ApplicationConfig> _config;
 
-		public HomeController(ILogger<HomeController> logger, ApplicationContext context)
+		public HomeController(ILogger<HomeController> logger, SoftDeletedApplicationContext context, IOptions<ApplicationConfig> config)
 		{
 			_logger = logger;
 			_context = context;
+			_config = config;
 		}
 
 		public async Task<IActionResult> Index()
 		{
 			List<Product> products = await _context.Set<Product>()
 				.Include(a => a.ProductImages)
-				.Where(a => a.ProductImages.Any(x => x.IsTitleImage))
+				.Include(a => a.Prices)
+				.Where(a => a.IsActive && a.ProductImages.Any(x => x.IsTitleImage))
+				.Take(8)
 				.ToListAsync();
 
 			return View(products);
@@ -43,9 +49,10 @@ namespace PaintsAndTales.WebApp.Controllers
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
 
-		public IActionResult Show(string path)
+		public IActionResult Show(string name, string extension)
 		{
-			byte[] array = System.IO.File.ReadAllBytes(path);
+			string imagePath = $"{Path.Combine(_config.Value.ImageFolder, name)}.{extension}";
+			byte[] array = System.IO.File.ReadAllBytes(imagePath);
 			return File(array, "image/jpg");
 		}
 	}

@@ -3,24 +3,18 @@ using System.Collections.Generic;
 
 namespace PaintsAndTales.Model.Entities
 {
-	public class Product : IEntity
+	public class ColorEntity : IEntity
 	{
 		public int Id { get; set; }
 		public DateTime Created { get; set; }
 		public DateTime? Deleted { get; set; }
-		public bool IsActive { get; set; }
 		public string Name { get; set; }
-		public string Description { get; set; }
+		public string ColorCode { get; set; }
 
-		public ICollection<ProductImage> ProductImages { get; set; }
 		public ICollection<ProductColor> ProductColors { get; set; }
-		public ICollection<Price> Prices { get; set; }
-
-		public Product()
+		public ColorEntity()
 		{
-			ProductImages = new HashSet<ProductImage>();
 			ProductColors = new HashSet<ProductColor>();
-			Prices = new HashSet<Price>();
 		}
 	}
 }
