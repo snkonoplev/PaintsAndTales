@@ -1,0 +1,6 @@
+﻿  insert into products
+  (created, is_active, name, description)
+  values
+  (NOW(), true, 'Тестовый 1', 'Описание для тестоворго 1'),
+  (NOW(), true, 'Тестовый 2', 'Описание для тестоворго 2'),
+  (NOW(), true, 'Тестовый 3', 'Описание для тестоворго 3')
