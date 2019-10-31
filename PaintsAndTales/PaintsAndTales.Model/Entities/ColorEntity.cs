@@ -8,13 +8,16 @@ namespace PaintsAndTales.Model.Entities
 		public int Id { get; set; }
 		public DateTime Created { get; set; }
 		public DateTime? Deleted { get; set; }
+		public int ImageId { get; set; }
 		public string Name { get; set; }
 		public string ColorCode { get; set; }
 
-		public ICollection<ProductColor> ProductColors { get; set; }
+		public ImageEntity ImageEntity { get; set; }
+
+		public ICollection<ImageEntity> ProductImages { get; set; }
 		public ColorEntity()
 		{
-			ProductColors = new HashSet<ProductColor>();
+			ProductImages = new HashSet<ImageEntity>();
 		}
 	}
 }

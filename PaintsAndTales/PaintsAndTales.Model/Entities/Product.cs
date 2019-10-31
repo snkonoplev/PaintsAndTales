@@ -12,14 +12,12 @@ namespace PaintsAndTales.Model.Entities
 		public string Name { get; set; }
 		public string Description { get; set; }
 
-		public ICollection<ProductImage> ProductImages { get; set; }
-		public ICollection<ProductColor> ProductColors { get; set; }
+		public ICollection<ImageEntity> ProductImages { get; set; }
 		public ICollection<Price> Prices { get; set; }
 
 		public Product()
 		{
-			ProductImages = new HashSet<ProductImage>();
-			ProductColors = new HashSet<ProductColor>();
+			ProductImages = new HashSet<ImageEntity>();
 			Prices = new HashSet<Price>();
 		}
 	}

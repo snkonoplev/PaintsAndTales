@@ -6,12 +6,12 @@
 <div class="col-6 col-md-4 col-lg-3">
 	<div class="tt-product thumbprod-center" id="product-42">
 		<div class="tt-image-box">
-			<a href="index-4.html?route=product/product&amp;product_id=42">
+			<a href="@Url.Action("Product","Product", new {id = Model.Id})">
 				<span class="tt-img"><img src="~/catalog/view/theme/wokiee/img/loader.svg" data-src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="@Model.Name"></span>
 			</a>
 		</div>
 		<div class="tt-description">
-			<h2 class="tt-title"><a href="index-4.html?route=product/product&amp;product_id=42">@Model.Name</a></h2>
+			<h2 class="tt-title"><a href="@Url.Action("Product","Product", new {id = Model.Id})">@Model.Name</a></h2>
 			@if(Model.Prices != null && Model.Prices.Any())
 			{			
 				<div class="tt-price">

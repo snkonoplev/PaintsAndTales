@@ -1,6 +1,8 @@
-﻿  insert into product_images
+﻿  insert into images
   (created, product_id, is_title_image, file_name, file_extension)
   values
-  (NOW(), 1, true, 'product-01-04-930x1163', 'jpg'),
-  (NOW(), 2, true, 'product-02-02-930x1163', 'jpg'),
-  (NOW(), 3, true, 'product-06-02-930x1163', 'jpg')
+  (NOW(), 1, true, '1_1', 'jpeg'),
+  (NOW(), 2, true, '2_1', 'jpeg'),
+  (NOW(), 3, true, '3_1', 'jpeg'),
+  (NOW(), 4, true, '4_1', 'jpeg'),
+  (NOW(), 5, true, '5_1', 'jpeg')

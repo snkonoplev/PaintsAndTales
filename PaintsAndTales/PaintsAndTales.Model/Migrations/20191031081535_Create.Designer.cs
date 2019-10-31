@@ -10,7 +10,7 @@ using PaintsAndTales.Model;
 namespace PaintsAndTales.Model.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20191030071032_Create")]
+    [Migration("20191031081535_Create")]
     partial class Create
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,10 @@ namespace PaintsAndTales.Model.Migrations
                         .HasColumnName("deleted")
                         .HasColumnType("DATETIME");
 
+                    b.Property<int>("ImageId")
+                        .HasColumnName("image_id")
+                        .HasColumnType("int(11)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
@@ -48,7 +52,56 @@ namespace PaintsAndTales.Model.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ImageId");
+
                     b.ToTable("colors");
+                });
+
+            modelBuilder.Entity("PaintsAndTales.Model.Entities.ImageEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int(11)")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ColorId")
+                        .HasColumnName("color_id")
+                        .HasColumnType("int(11)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnName("created")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<DateTime?>("Deleted")
+                        .HasColumnName("deleted")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<string>("FileExtension")
+                        .IsRequired()
+                        .HasColumnName("file_extension")
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnName("file_name")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("IsTitleImage")
+                        .HasColumnName("is_title_image")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnName("product_id")
+                        .HasColumnType("int(11)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColorId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("images");
                 });
 
             modelBuilder.Entity("PaintsAndTales.Model.Entities.Price", b =>
@@ -122,80 +175,6 @@ namespace PaintsAndTales.Model.Migrations
                     b.ToTable("products");
                 });
 
-            modelBuilder.Entity("PaintsAndTales.Model.Entities.ProductColor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("int(11)")
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ColorEntityId")
-                        .HasColumnName("color_id")
-                        .HasColumnType("int(11)");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnName("created")
-                        .HasColumnType("DATETIME");
-
-                    b.Property<DateTime?>("Deleted")
-                        .HasColumnName("deleted")
-                        .HasColumnType("DATETIME");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnName("product_id")
-                        .HasColumnType("int(11)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ColorEntityId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("product_colors");
-                });
-
-            modelBuilder.Entity("PaintsAndTales.Model.Entities.ProductImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id")
-                        .HasColumnType("int(11)")
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnName("created")
-                        .HasColumnType("DATETIME");
-
-                    b.Property<DateTime?>("Deleted")
-                        .HasColumnName("deleted")
-                        .HasColumnType("DATETIME");
-
-                    b.Property<string>("FileExtension")
-                        .IsRequired()
-                        .HasColumnName("file_extension")
-                        .HasColumnType("varchar(5)");
-
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnName("file_name")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<bool>("IsTitleImage")
-                        .HasColumnName("is_title_image")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnName("product_id")
-                        .HasColumnType("int(11)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("product_images");
-                });
-
             modelBuilder.Entity("PaintsAndTales.Model.Entities.ProductSize", b =>
                 {
                     b.Property<int>("Id")
@@ -227,6 +206,28 @@ namespace PaintsAndTales.Model.Migrations
                     b.ToTable("product_sizes");
                 });
 
+            modelBuilder.Entity("PaintsAndTales.Model.Entities.ColorEntity", b =>
+                {
+                    b.HasOne("PaintsAndTales.Model.Entities.ImageEntity", "ImageEntity")
+                        .WithMany()
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("PaintsAndTales.Model.Entities.ImageEntity", b =>
+                {
+                    b.HasOne("PaintsAndTales.Model.Entities.ColorEntity", "Color")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("PaintsAndTales.Model.Entities.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
             modelBuilder.Entity("PaintsAndTales.Model.Entities.Price", b =>
                 {
                     b.HasOne("PaintsAndTales.Model.Entities.Product", "Product")
@@ -238,30 +239,6 @@ namespace PaintsAndTales.Model.Migrations
                     b.HasOne("PaintsAndTales.Model.Entities.ProductSize", "ProductSize")
                         .WithMany("Prices")
                         .HasForeignKey("ProductSizeId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PaintsAndTales.Model.Entities.ProductColor", b =>
-                {
-                    b.HasOne("PaintsAndTales.Model.Entities.ColorEntity", "ColorEntity")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("ColorEntityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("PaintsAndTales.Model.Entities.Product", "Product")
-                        .WithMany("ProductColors")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PaintsAndTales.Model.Entities.ProductImage", b =>
-                {
-                    b.HasOne("PaintsAndTales.Model.Entities.Product", "Product")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

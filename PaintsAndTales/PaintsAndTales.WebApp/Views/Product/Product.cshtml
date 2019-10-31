@@ -1,0 +1,147 @@
+﻿@model PaintsAndTales.Model.Entities.Product;
+@{
+	ViewData["Title"] = "Product";
+	var titleImage = Model.ProductImages.First(a => a.IsTitleImage);
+}
+
+<div class="container-indent" id="product">
+	<!-- mobile product slider  -->
+	<div class="tt-mobile-product-layout visible-xs">
+		<div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
+			@foreach (var image in Model.ProductImages)
+			{
+				<div><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt=""></div>
+			}
+		</div>
+	</div>
+	<!-- /mobile product slider  -->
+	<div class="container">
+		<div class="row airSticky_stop-block">
+			<div class="col-lg-12">
+				<div class="row ">
+					<div class="col-md-12 col-lg-6 hidden-xs">
+						<div class="airSticky deactivate-sticky airSticky_fixed" style="width: 580px; position: fixed; top: 70px;">
+							<div class="tt-product-vertical-layout clearfix">
+								<div class="tt-product-single-img">
+									<div>
+										<button class="tt-btn-zomm tt-top-right"><i class="icon-f-86"></i></button>
+										<img class="zoom-product" src="@Url.Action("Show","Home", new {name = titleImage.FileName, extension = titleImage.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = titleImage.FileName, extension = titleImage.FileExtension})" alt="">
+									</div>
+								</div>
+								<div class="tt-product-single-carousel-vertical">
+									<ul id="smallGallery" class="tt-slick-button-vertical slick-animated-show-js slick-vertical slick-slider">
+										<div aria-live="polite" class="slick-list draggable" style="height: 605px;">
+											<div class="slick-track" role="listbox" style="opacity: 1; height: 484px; transform: translate3d(0px, 0px, 0px);">
+												@{
+													int i = 1;
+													@foreach (var image in Model.ProductImages)
+													{
+														if (i == 1)
+														{
+															<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
+																<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+															</li>
+														}
+														else
+														{
+															<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
+																<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+															</li>
+														}
+
+														i++;
+													}
+												}
+											</div>
+										</div>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-lg-6">
+						<div class="tt-product-single-info">
+							<h1 class="tt-title">@Model.Name</h1>
+							<div class="tt-price">
+								<span>₽@Model.Prices.Min(a => a.Value)</span>
+							</div>
+							<div class="tt-wrapper">
+								@Model.Description
+							</div>
+							<div class="tt-swatches-container">
+								<div class="options">
+									<div class="tt-wrapper" id="input-option218">
+										<div class="tt-title-options"><label class="control-label" for="input-option218">Размер:</label></div>
+										<div class="form-group required">
+											<ul class="tt-options-swatch options-large">
+
+												<li>
+													<a href="javascript:;" data-tooltip="+₽12.00" data-tposition="top">
+														<input type="radio" class="d-none" name="option[218]" value="5">
+														S
+													</a>
+												</li>
+
+												<li>
+													<a href="javascript:;" data-tooltip="+₽24.00" data-tposition="top">
+														<input type="radio" class="d-none" name="option[218]" value="6">
+														M
+													</a>
+												</li>
+
+												<li>
+													<a href="javascript:;" data-tooltip="+₽36.00" data-tposition="top">
+														<input type="radio" class="d-none" name="option[218]" value="7">
+														L
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tt-wrapper" id="input-option223">
+										<div class="tt-title-options"><label class="control-label" for="input-option223">Цвер:</label></div>
+										<div class="form-group required">
+											<ul class="tt-options-swatch options-large">
+												<li>
+													<a class="options-color" href="javascript:;">
+														<span class="swatch-img">
+															<input type="checkbox" class="d-none" name="option[223][]" value="9">
+															<img src="~/image/cache/catalog/color1-50x50.png" alt="" class="loading" data-was-processed="true">
+														</span>
+													</a>
+												</li>
+												<li>
+													<a class="options-color" href="javascript:;">
+														<span class="swatch-img">
+															<input type="checkbox" class="d-none" name="option[223][]" value="10">
+															<img src="~/image/cache/catalog/color2-50x50.png" alt="" class="loading" data-was-processed="true">
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="tt-wrapper">
+										<div class="tt-row-custom-01">
+											<div class="col-item">
+												<div class="tt-input-counter style-01">
+													<span class="minus-btn"></span>
+													<input type="text" name="quantity" id="quantity_wanted" size="200" value="2">
+													<span class="plus-btn"></span>
+												</div>
+											</div>
+											<div class="col-item">
+												<input type="hidden" name="product_id" value="42">
+												<a href="javascript:;" class="btn btn-lg" id="button-cart" data-loading-text="Loading..." data-original-text="Add to Cart"><i class="icon-f-39"></i><span>Добавить в корзину</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -9,22 +9,6 @@ namespace PaintsAndTales.Model.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "colors",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    created = table.Column<DateTime>(type: "DATETIME", nullable: false),
-                    deleted = table.Column<DateTime>(type: "DATETIME", nullable: true),
-                    name = table.Column<string>(type: "varchar(100)", nullable: false),
-                    color_code = table.Column<string>(type: "varchar(10)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_colors", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "product_sizes",
                 columns: table => new
                 {
@@ -87,27 +71,24 @@ namespace PaintsAndTales.Model.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "product_colors",
+                name: "images",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     created = table.Column<DateTime>(type: "DATETIME", nullable: false),
                     deleted = table.Column<DateTime>(type: "DATETIME", nullable: true),
-                    product_id = table.Column<int>(type: "int(11)", nullable: false),
-                    color_id = table.Column<int>(type: "int(11)", nullable: false)
+                    product_id = table.Column<int>(type: "int(11)", nullable: true),
+                    color_id = table.Column<int>(type: "int(11)", nullable: true),
+                    is_title_image = table.Column<bool>(type: "bit", nullable: false),
+                    file_name = table.Column<string>(type: "varchar(100)", nullable: false),
+                    file_extension = table.Column<string>(type: "varchar(5)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_product_colors", x => x.id);
+                    table.PrimaryKey("PK_images", x => x.id);
                     table.ForeignKey(
-                        name: "FK_product_colors_colors_color_id",
-                        column: x => x.color_id,
-                        principalTable: "colors",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_product_colors_products_product_id",
+                        name: "FK_images_products_product_id",
                         column: x => x.product_id,
                         principalTable: "products",
                         principalColumn: "id",
@@ -115,28 +96,42 @@ namespace PaintsAndTales.Model.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "product_images",
+                name: "colors",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     created = table.Column<DateTime>(type: "DATETIME", nullable: false),
                     deleted = table.Column<DateTime>(type: "DATETIME", nullable: true),
-                    product_id = table.Column<int>(type: "int(11)", nullable: false),
-                    is_title_image = table.Column<bool>(type: "bit", nullable: false),
-                    file_name = table.Column<string>(type: "varchar(100)", nullable: false),
-                    file_extension = table.Column<string>(type: "varchar(5)", nullable: false)
+                    image_id = table.Column<int>(type: "int(11)", nullable: false),
+                    name = table.Column<string>(type: "varchar(100)", nullable: false),
+                    color_code = table.Column<string>(type: "varchar(10)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_product_images", x => x.id);
+                    table.PrimaryKey("PK_colors", x => x.id);
                     table.ForeignKey(
-                        name: "FK_product_images_products_product_id",
-                        column: x => x.product_id,
-                        principalTable: "products",
+                        name: "FK_colors_images_image_id",
+                        column: x => x.image_id,
+                        principalTable: "images",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_colors_image_id",
+                table: "colors",
+                column: "image_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_images_color_id",
+                table: "images",
+                column: "color_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_images_product_id",
+                table: "images",
+                column: "product_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_prices_product_id",
@@ -148,35 +143,29 @@ namespace PaintsAndTales.Model.Migrations
                 table: "prices",
                 column: "product_size_id");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_product_colors_color_id",
-                table: "product_colors",
-                column: "color_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_product_colors_product_id",
-                table: "product_colors",
-                column: "product_id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_product_images_product_id",
-                table: "product_images",
-                column: "product_id");
+            migrationBuilder.AddForeignKey(
+                name: "FK_images_colors_color_id",
+                table: "images",
+                column: "color_id",
+                principalTable: "colors",
+                principalColumn: "id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_colors_images_image_id",
+                table: "colors");
+
             migrationBuilder.DropTable(
                 name: "prices");
 
             migrationBuilder.DropTable(
-                name: "product_colors");
-
-            migrationBuilder.DropTable(
-                name: "product_images");
-
-            migrationBuilder.DropTable(
                 name: "product_sizes");
+
+            migrationBuilder.DropTable(
+                name: "images");
 
             migrationBuilder.DropTable(
                 name: "colors");

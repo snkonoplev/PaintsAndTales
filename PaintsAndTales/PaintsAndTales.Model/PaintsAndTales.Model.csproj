@@ -15,6 +15,10 @@
     <Compile Remove="Migrations\20191029155452_Create.Designer.cs" />
     <Compile Remove="Migrations\20191030064336_Create.cs" />
     <Compile Remove="Migrations\20191030064336_Create.Designer.cs" />
+    <Compile Remove="Migrations\20191030071032_Create.cs" />
+    <Compile Remove="Migrations\20191030071032_Create.Designer.cs" />
+    <Compile Remove="Migrations\20191031060701_Create.cs" />
+    <Compile Remove="Migrations\20191031060701_Create.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
