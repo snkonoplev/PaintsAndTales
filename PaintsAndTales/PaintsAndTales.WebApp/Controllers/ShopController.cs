@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PaintsAndTales.Model;
+using PaintsAndTales.Model.Entities;
 
 namespace PaintsAndTales.WebApp.Controllers
 {
@@ -19,9 +24,16 @@ namespace PaintsAndTales.WebApp.Controllers
 	    }
 
 	    [Route("shop")]
-		public IActionResult Shop()
+		public async Task<IActionResult> Shop()
         {
-            return View();
-        }
+			List<Product> products = await _context.Set<Product>()
+				.Include(a => a.ProductImages)
+				.Include(a => a.Prices)
+				.Where(a => a.IsActive && a.ProductImages.Any(x => x.IsTitleImage))
+				.Take(8)
+				.ToListAsync();
+
+			return View(products);
+		}
     }
 }
