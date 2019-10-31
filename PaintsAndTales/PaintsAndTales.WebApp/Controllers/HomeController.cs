@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -46,9 +48,17 @@ namespace PaintsAndTales.WebApp.Controllers
 
 		public IActionResult Show(string name, string extension)
 		{
-			string imagePath = $"{Path.Combine(_config.Value.ImageFolder, name)}.{extension}";
-			byte[] array = System.IO.File.ReadAllBytes(imagePath);
-			return File(array, "image/jpg");
+			try
+			{
+				string imagePath = $"{Path.Combine(_config.Value.ImageFolder, name)}.{extension}";
+				byte[] array = System.IO.File.ReadAllBytes(imagePath);
+				return File(array, "image/jpg");
+			}
+			catch (Exception e)
+			{
+				_logger.LogError(e, $"Can't get image {name}.{extension}");
+				return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+			}
 		}
 	}
 }

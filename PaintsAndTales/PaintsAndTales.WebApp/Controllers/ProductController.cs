@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
 
@@ -13,15 +8,11 @@ namespace PaintsAndTales.WebApp.Controllers
 {
 	public class ProductController : Controller
     {
-	    private readonly ILogger<ProductController> _logger;
 	    private readonly SoftDeletedApplicationContext _context;
-	    private readonly IOptions<ApplicationConfig> _config;
 
-	    public ProductController(ILogger<ProductController> logger, SoftDeletedApplicationContext context, IOptions<ApplicationConfig> config)
+	    public ProductController(SoftDeletedApplicationContext context)
 	    {
-		    _logger = logger;
 		    _context = context;
-		    _config = config;
 	    }
 
 	    [Route("product/{id:int}")]

@@ -4,21 +4,17 @@ using PaintsAndTales.Model.Entities;
 
 namespace PaintsAndTales.Model.Configurations
 {
-	public class ColorEntityConfiguration : IEntityTypeConfiguration<ColorEntity>
+	public class CategoryConfiguration : IEntityTypeConfiguration<Category>
 	{
-		public void Configure(EntityTypeBuilder<ColorEntity> builder)
+		public void Configure(EntityTypeBuilder<Category> builder)
 		{
-			builder.ToTable("colors");
+			builder.ToTable("categories");
 
 			builder.HasKey(t => t.Id);
 			builder.Property(t => t.Id).IsRequired().HasColumnName("id").HasColumnType("int(11)").UseMySqlIdentityColumn();
-			builder.Property(t => t.ImageId).HasColumnName("image_id").HasColumnType("int(11)");
 			builder.Property(t => t.Created).IsRequired().HasColumnName("created").HasColumnType("DATETIME");
 			builder.Property(t => t.Deleted).HasColumnName("deleted").HasColumnType("DATETIME");
 			builder.Property(t => t.Name).IsRequired().HasColumnName("name").HasColumnType("varchar(100)");
-			builder.Property(t => t.ColorCode).IsRequired().HasColumnName("color_code").HasColumnType("varchar(10)");
-
-			builder.HasOne(a => a.ImageEntity).WithMany().HasForeignKey(a => a.ImageId).OnDelete(DeleteBehavior.Restrict);
 		}
 	}
 }
