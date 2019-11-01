@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,10 @@ namespace PaintsAndTales.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
-			services.AddSession();
+			services.AddSession(config =>
+			{
+				config.IdleTimeout = TimeSpan.FromMinutes(30);
+			});
 
 			DbContextOptionsBuilder<ApplicationContext> optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
 			DbContextOptions<ApplicationContext> options = optionsBuilder
