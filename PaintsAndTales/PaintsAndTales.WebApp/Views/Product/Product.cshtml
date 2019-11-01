@@ -1,14 +1,14 @@
-﻿@model PaintsAndTales.Model.Entities.Product;
+﻿@model ProductViewModel;
 @{
-	ViewData["Title"] = "Product";
-	var titleImage = Model.ProductImages.First(a => a.IsTitleImage);
+	ViewData["Title"] =  Model.Product.Name;
+	var titleImage = Model.ColorId != null ? Model.Product.ProductImages.First(a => a.ColorId == Model.ColorId) : Model.Product.ProductImages.First(a => a.IsTitleImage);
 }
 
 <div class="container-indent" id="product">
 	<!-- mobile product slider  -->
 	<div class="tt-mobile-product-layout visible-xs">
 		<div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
-			@foreach (var image in Model.ProductImages)
+			@foreach (var image in Model.Product.ProductImages)
 			{
 				<div><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt=""></div>
 			}
@@ -30,26 +30,44 @@
 								</div>
 								<div class="tt-product-single-carousel-vertical">
 									<ul id="smallGallery" class="tt-slick-button-vertical slick-animated-show-js slick-vertical slick-slider">
-										<div aria-live="polite" class="slick-list draggable" style="height: 105px;">
+										<div aria-live="polite" class="slick-list draggable" style="height: 305px;">
 											<div class="slick-track" role="listbox" style="opacity: 1; height: 484px; transform: translate3d(0px, 0px, 0px);">
 												@{
 													int i = 1;
-													@foreach (var image in Model.ProductImages)
+													@foreach (var image in Model.Product.ProductImages)
 													{
-														if (i == 1)
+														if(Model.ColorId != null)
 														{
-															<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
-																<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-															</li>
+															if (Model.ColorId == image.ColorId)
+															{
+																<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
+																	<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+																</li>
+															}
+															else
+															{
+																<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
+																	<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+																</li>
+															}
 														}
 														else
 														{
-															<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
-																<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-															</li>
-														}
+															if (i == 1)
+															{
+																<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
+																	<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+																</li>
+															}
+															else
+															{
+																<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
+																	<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
+																</li>
+															}
 
-														i++;
+															i++;
+														}
 													}
 												}
 											</div>
@@ -61,12 +79,12 @@
 					</div>
 					<div class="col-md-12 col-lg-6">
 						<div class="tt-product-single-info">
-							<h1 class="tt-title">@Model.Name</h1>
+							<h1 class="tt-title">@Model.Product.Name</h1>
 							<div class="tt-price">
-								<span>₽@Model.Prices.Min(a => a.Value)</span>
+								<span>₽@Model.Product.Prices.First(a => a.ProductSizeId == Model.SizeId).Value</span>
 							</div>
 							<div class="tt-wrapper">
-								@Model.Description
+								@Model.Product.Description
 							</div>
 							<div class="tt-swatches-container">
 								<div class="options">
@@ -74,50 +92,32 @@
 										<div class="tt-title-options"><label class="control-label" for="input-option218">Размер:</label></div>
 										<div class="form-group required">
 											<ul class="tt-options-swatch options-large">
-
-												<li>
-													<a href="javascript:;" data-tooltip="+₽12.00" data-tposition="top">
-														<input type="radio" class="d-none" name="option[218]" value="5">
-														S
-													</a>
-												</li>
-
-												<li>
-													<a href="javascript:;" data-tooltip="+₽24.00" data-tposition="top">
-														<input type="radio" class="d-none" name="option[218]" value="6">
-														M
-													</a>
-												</li>
-
-												<li>
-													<a href="javascript:;" data-tooltip="+₽36.00" data-tposition="top">
-														<input type="radio" class="d-none" name="option[218]" value="7">
-														L
-													</a>
-												</li>
+												@foreach(var size in Model.Product.Prices.Select(a => a.ProductSize))
+												{
+													<li onclick="location.href='@Url.Action("Product","Product", new {id = Model.Product.Id, sizeId = size.Id, colorId = Model.ColorId})';" class="@(Model.SizeId == size.Id ? "active" : "")">
+														<a>
+															@($"{size.Name} ({size.Size})")
+														</a>
+													</li>
+												}
 											</ul>
 										</div>
 									</div>
 									<div class="tt-wrapper" id="input-option223">
-										<div class="tt-title-options"><label class="control-label" for="input-option223">Цвер:</label></div>
+										<div class="tt-title-options"><label class="control-label" for="input-option223">Цвет:</label></div>
 										<div class="form-group required">
 											<ul class="tt-options-swatch options-large">
-												<li>
-													<a class="options-color" href="javascript:;">
-														<span class="swatch-img">
-															<input type="checkbox" class="d-none" name="option[223][]" value="9">
-															<img src="~/image/cache/catalog/color1-50x50.png" alt="" class="loading" data-was-processed="true">
-														</span>
-													</a>
-												</li>
-												<li>
-													<a class="options-color" href="javascript:;">
-														<span class="swatch-img">
-															<input type="checkbox" class="d-none" name="option[223][]" value="10">
-															<img src="~/image/cache/catalog/color2-50x50.png" alt="" class="loading" data-was-processed="true">
-														</span>
-													</a>
-												</li>
+												@foreach(var color in Model.Product.ProductImages.Select(a => a.Color).GroupBy(a => a.Id).Select(a=>a.First()))
+												{
+													<li onclick="location.href='@Url.Action("Product","Product", new {id = Model.Product.Id, sizeId = Model.SizeId, colorId = color.Id})';" class="@(Model.ColorId == color.Id ? "active" : "")">
+														<a class="options-color">
+															<span class="swatch-img">
+																<input type="checkbox" class="d-none" name="option[223][]" value="9">
+																<img src="@Url.Action("Show","Home", new {name = color.ImageEntity.FileName, extension = color.ImageEntity.FileExtension})" alt="" class="loading" data-was-processed="true">
+															</span>
+														</a>
+													</li>
+												}
 											</ul>
 										</div>
 									</div>

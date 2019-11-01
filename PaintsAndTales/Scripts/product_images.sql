@@ -5,4 +5,8 @@
   (NOW(), 2, true, '2_1', 'jpeg'),
   (NOW(), 3, true, '3_1', 'jpeg'),
   (NOW(), 4, true, '4_1', 'jpeg'),
-  (NOW(), 5, true, '5_1', 'jpeg')
+  (NOW(), 5, true, '5_1', 'jpeg'),
+  (NOW(), null, false, 'blue', 'png'),
+  (NOW(), null, false, 'gray', 'png'),
+  (NOW(), null, false, 'green', 'png'),
+  (NOW(), null, false, 'orange', 'png')

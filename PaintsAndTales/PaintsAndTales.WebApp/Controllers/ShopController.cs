@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
+using PaintsAndTales.WebApp.Models;
 
 namespace PaintsAndTales.WebApp.Controllers
 {
@@ -24,16 +25,27 @@ namespace PaintsAndTales.WebApp.Controllers
 	    }
 
 	    [Route("shop")]
-		public async Task<IActionResult> Shop()
-        {
+		public async Task<IActionResult> Shop(int? categoryId)
+		{
 			List<Product> products = await _context.Set<Product>()
 				.Include(a => a.ProductImages)
 				.Include(a => a.Prices)
-				.Where(a => a.IsActive && a.ProductImages.Any(x => x.IsTitleImage))
-				.Take(8)
+				.Where(a => a.IsActive && a.ProductImages.Any(x => x.IsTitleImage) && (categoryId == null || a.CategoryId == categoryId))
 				.ToListAsync();
 
-			return View(products);
+			List<Category> categories = await _context.Set<Category>()
+				.Include(a => a.Products)
+				.Where(a => a.Products.Any())
+				.ToListAsync();
+
+			ProductGroupsViewModel model = new ProductGroupsViewModel
+			{
+				Products = products,
+				Categories = categories,
+				CurrentCategoryId = categoryId
+			};
+
+			return View(model);
 		}
     }
 }

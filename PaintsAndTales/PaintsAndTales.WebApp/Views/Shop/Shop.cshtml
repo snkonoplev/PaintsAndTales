@@ -1,6 +1,6 @@
-﻿@model IList<PaintsAndTales.Model.Entities.Product>;
+﻿@model ProductGroupsViewModel;
 @{
-	ViewData["Title"] = "Shop";
+	ViewData["Title"] = "Магазин";
 }
 
 <div class="container-indent">
@@ -23,15 +23,14 @@
 					<div class="box-content mfilter-content">
 						<div class="d-flex flex-column bd-highlight mb-3">
 							<div class="p-2 bd-highlight">
-								<a class="btn nav-btn active-nav-link" href="@Url.Action("Shop","Shop")">ВСЕ ТОВАРЫ</a>
-								@*<button type="button" class="btn nav-btn active-nav-link">ВСЕ ТОВАРЫ</button>*@
+								<a class="btn nav-btn @(Model.CurrentCategoryId == null ? "active-nav-link": "inactive-nav-link")" href="@Url.Action("Shop","Shop")">ВСЕ ТОВАРЫ</a>
 							</div>
-							<div class="p-2 bd-highlight">
-								<a class="btn nav-btn inactive-nav-link" href="@Url.Action("Shop","Shop")">Категория 1</a>
-							</div>
-							<div class="p-2 bd-highlight">
-								<a class="btn nav-btn inactive-nav-link" href="@Url.Action("Shop","Shop")">Категория 1</a>
-							</div>
+							@foreach(var category in Model.Categories)
+							{
+								<div class="p-2 bd-highlight">
+									<a class="btn nav-btn  @(Model.CurrentCategoryId == category.Id ? "active-nav-link": "inactive-nav-link")" href="@Url.Action("Shop","Shop", new {categoryId = category.Id})">@category.Name</a>
+								</div>
+							}
 						</div>
 					</div>
 				</div>
@@ -42,14 +41,14 @@
 						<div id="mfilter-content-container">
 							<div class="tt-filters-options ">
 								<h1 class="tt-title">
-									Все товары
+									@(Model.CurrentCategoryId == null ? "Все товары" : Model.Categories.First(a=>a.Id == Model.CurrentCategoryId).Name)
 								</h1>
 								<div class="tt-btn-toggle">
 									<a href="#">FILTER</a>
 								</div>
 							</div>
 							<div class="tt-product-listing row">
-								@foreach (var product in Model)
+								@foreach (var product in Model.Products)
 								{
 									@await Html.PartialAsync("~/Views/Home/ProductCard.cshtml", product)
 								}

@@ -16,7 +16,6 @@ namespace PaintsAndTales.Model.Configurations
 			builder.Property(t => t.Created).IsRequired().HasColumnName("created").HasColumnType("DATETIME");
 			builder.Property(t => t.Deleted).HasColumnName("deleted").HasColumnType("DATETIME");
 			builder.Property(t => t.Name).IsRequired().HasColumnName("name").HasColumnType("varchar(100)");
-			builder.Property(t => t.ColorCode).IsRequired().HasColumnName("color_code").HasColumnType("varchar(10)");
 
 			builder.HasOne(a => a.ImageEntity).WithMany().HasForeignKey(a => a.ImageId).OnDelete(DeleteBehavior.Restrict);
 		}

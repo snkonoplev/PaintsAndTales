@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<link href="~/image/catalog/favicon.png" rel="icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - PaintsAndTales.WebApp</title>
+	<title>@ViewData["Title"] - StickerMania</title>
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/theme/wokiee/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -71,16 +71,16 @@
 							<div class="tt-desctop-menu">
 								<nav>
 									<ul>
-										<li class=' dropdown tt-megamenu-col-02 tt-submenu  selected'>
+										<li class='dropdown tt-megamenu-col-02 tt-submenu @((string)ViewData["Title"] == "Домашняя" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>ДОМАШНЯЯ</a>
 										</li>
-										<li class='  dropdown megamenu tt-submenu '>
+										<li class='  dropdown megamenu tt-submenu @((string)ViewData["Title"] == "Магазин" ? "selected" : "")'>
 											<a href='@Url.Action("Shop","Shop")' class=''>МАГАЗИН</a>
 										</li>
-										<li class='dropdown tt-megamenu-col-01 tt-submenu   '>
+										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "About" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>О НАС</a>
 										</li>
-										<li class='dropdown tt-megamenu-col-01 tt-submenu   '>
+										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "Contacts" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>КОНТАКТЫ</a>
 										</li>
 									</ul>

@@ -10,7 +10,6 @@ namespace PaintsAndTales.Model.Entities
 		public DateTime? Deleted { get; set; }
 		public int ImageId { get; set; }
 		public string Name { get; set; }
-		public string ColorCode { get; set; }
 
 		public ImageEntity ImageEntity { get; set; }
 
