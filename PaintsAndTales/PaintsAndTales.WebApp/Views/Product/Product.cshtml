@@ -8,7 +8,7 @@
 	<!-- mobile product slider  -->
 	<div class="tt-mobile-product-layout visible-xs">
 		<div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
-			@foreach (var image in Model.Product.ProductImages)
+			@foreach (var image in Model.Product.ProductImages.OrderByDescending(a => a.ColorId == Model.ColorId))
 			{
 				<div><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt=""></div>
 			}
@@ -33,41 +33,27 @@
 										<div aria-live="polite" class="slick-list draggable" style="height: 305px;">
 											<div class="slick-track" role="listbox" style="opacity: 1; height: 484px; transform: translate3d(0px, 0px, 0px);">
 												@{
-													int i = 1;
-													@foreach (var image in Model.Product.ProductImages)
+													int i = 0;
+													@foreach (var image in Model.Product.ProductImages.OrderByDescending(a => a.ColorId == Model.ColorId))
 													{
-														if(Model.ColorId != null)
+														if (i == 0)
 														{
-															if (Model.ColorId == image.ColorId)
-															{
-																<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
-																	<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-																</li>
-															}
-															else
-															{
-																<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
-																	<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-																</li>
-															}
+															<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="@i" aria-hidden="false">
+																<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0">
+																	<img src="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true">
+																</a>
+															</li>
 														}
 														else
 														{
-															if (i == 1)
-															{
-																<li class="slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 81px;" data-slick-index="0" aria-hidden="false">
-																	<a class="zoomGalleryActive" href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-																</li>
-															}
-															else
-															{
-																<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="1" aria-hidden="false">
-																	<a href="#" data-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0"><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true"></a>
-																</li>
-															}
-
-															i++;
+															<li class="slick-slide slick-active" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 81px;" data-slick-index="@i" aria-hidden="true">
+																<a href="#" data-image="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" data-zoom-image="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" tabindex="0">
+																	<img src="@Url.Action("Show", "Home", new {name = image.FileName, extension = image.FileExtension})" alt="" class="loading" data-was-processed="true">
+																</a>
+															</li>
 														}
+
+														i++;
 													}
 												}
 											</div>
