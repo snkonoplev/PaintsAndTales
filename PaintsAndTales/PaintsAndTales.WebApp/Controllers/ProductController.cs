@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
+using PaintsAndTales.WebApp.Code;
 using PaintsAndTales.WebApp.Models;
 
 namespace PaintsAndTales.WebApp.Controllers
@@ -33,6 +35,10 @@ namespace PaintsAndTales.WebApp.Controllers
 				ColorId = colorId,
 				SizeId = sizeId ?? product.Prices.First(a => a.Value == product.Prices.Min(x => x.Value)).ProductSizeId
 			};
+
+			List<Item> cart = HttpContext.Session.GetObjectFromJson<List<Item>>("cart") ?? new List<Item>();
+
+			ViewBag.cartCount = cart.Count;
 
 			return View(model);
         }

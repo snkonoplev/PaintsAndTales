@@ -112,13 +112,13 @@
 											<div class="col-item">
 												<div class="tt-input-counter style-01">
 													<span class="minus-btn"></span>
-													<input type="text" name="quantity" id="quantity_wanted" size="200" value="2">
+													<input type="text" name="quantity" id="quantity_wanted" size="200" value="1">
 													<span class="plus-btn"></span>
 												</div>
 											</div>
 											<div class="col-item">
 												<input type="hidden" name="product_id" value="42">
-												<a href="javascript:;" class="btn btn-lg" id="button-cart" data-loading-text="Loading..." data-original-text="Add to Cart"><i class="icon-f-39"></i><span>Добавить в корзину</span></a>
+												<a href="@Url.Action("Buy","Cart", new {id = Model.Product.Id, colorId = Model.ColorId, sizeId = Model.SizeId, quantity = 1})" class="btn btn-lg @(Model.ColorId == null ? "disabled" : "")" id="button-cart" data-loading-text="Loading..." data-original-text="Add to Cart"><i class="icon-f-39"></i><span>Добавить в корзину</span></a>
 											</div>
 										</div>
 									</div>
@@ -131,3 +131,11 @@
 		</div>
 	</div>
 </div>
+<script>
+	$("#quantity_wanted").on("change paste keyup", function() {
+		var val = $(this).val();
+		var link = $("#button-cart").attr("href");
+		var newLink = link.substring(0, link.lastIndexOf('&')) + '&quantity=' + val;
+		$("#button-cart").attr("href", newLink);
+	});
+</script>

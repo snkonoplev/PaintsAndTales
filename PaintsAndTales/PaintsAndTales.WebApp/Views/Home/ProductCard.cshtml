@@ -18,11 +18,11 @@
 					₽@Model.Prices.Min(a => a.Value)
 				</div>
 			}
-			<div class="tt-product-inside-hover">
+			@*<div class="tt-product-inside-hover">
 				<div class="tt-row-btn">
-					<a onclick="cart.add('42');" class="tt-btn-addtocart thumbprod-button-bg">В Корзину</a>
+					<a href="@Url.Action("Buy","Cart", new {id = Model.Id})">В Корзину</a>
 				</div>
-			</div>
+			</div>*@
 		</div>
 	</div>
 </div>

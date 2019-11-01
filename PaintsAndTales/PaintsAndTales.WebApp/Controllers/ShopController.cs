@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
+using PaintsAndTales.WebApp.Code;
 using PaintsAndTales.WebApp.Models;
 
 namespace PaintsAndTales.WebApp.Controllers
@@ -44,6 +45,10 @@ namespace PaintsAndTales.WebApp.Controllers
 				Categories = categories,
 				CurrentCategoryId = categoryId
 			};
+
+			List<Item> cart = HttpContext.Session.GetObjectFromJson<List<Item>>("cart") ?? new List<Item>();
+
+			ViewBag.cartCount = cart.Count;
 
 			return View(model);
 		}

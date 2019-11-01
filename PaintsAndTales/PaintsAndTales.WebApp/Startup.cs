@@ -24,6 +24,7 @@ namespace PaintsAndTales.WebApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
+			services.AddSession();
 
 			DbContextOptionsBuilder<ApplicationContext> optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
 			DbContextOptions<ApplicationContext> options = optionsBuilder
@@ -50,6 +51,9 @@ namespace PaintsAndTales.WebApp
 				app.UseStatusCodePagesWithRedirects("/Home/Error");
 				app.UseExceptionHandler("/Home/Error");
 			}
+
+			app.UseSession();
+
 			app.UseStaticFiles();
 
 			app.UseRouting();

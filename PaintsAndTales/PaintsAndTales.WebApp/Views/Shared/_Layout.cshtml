@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+	int cartCount = ViewBag.cartCount ?? 0;
+}
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="utf-8" />
@@ -9,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="">
 	<div id="loader-wrapper">
@@ -144,32 +148,12 @@
 						<!-- tt-cart -->
 						<div class="tt-desctop-parent-cart tt-parent-box" id="cart_block">
 							<div class="tt-cart tt-dropdown-obj">
-								<button class="tt-dropdown-toggle" data-tooltip="Корзина" data-tposition="bottom">
+								<button onclick="location.href='@Url.Action("Index","Cart")';" class="tt-dropdown-toggle" data-tooltip="Корзина" data-tposition="bottom" @(cartCount == 0 ? "disabled" : "")>
 									<i class="icon-f-39"></i>
-									<p class="d-none"><span id="total_amount_ajax">$0.00</span></p>
-									<span class="tt-badge-cart"><span id="total_count_ajax">0</span></span>
+									<span class="tt-badge-cart"><span id="total_count_ajax">@cartCount</span></span>
 								</button>
-								<div class="tt-dropdown-menu">
-									<div class="tt-mobile-add">
-										<h6 class="tt-title">Корзина</h6>
-										<button class="tt-close">Закрыть</button>
-									</div>
-									<div class="tt-dropdown-inner">
-										<div class="tt-cart-layout">
-											<div id="cart_content">
-												<div id="cart_content_ajax">
-													<a href="index-23.html?route=checkout/cart" class="tt-cart-empty">
-														<i class="icon-f-39"></i>
-														<p>Ваша корзина пуста!</p>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
-
 						<!-- /tt-cart -->
 						<!-- tt-account -->
 						<div class="tt-desctop-parent-account tt-parent-box">
@@ -244,62 +228,6 @@
 				</div>
 			</div>
 		</div>
-
-		@*<script type="text/javascript">
-			$(document).ready(function () {
-				function Unsubscribe() {
-					$.post(
-						'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe',
-						{
-							email: $('#newsletter800 .email').val()
-						},
-						function (e) {
-							$('#newsletter800 .email').val('');
-							alert(e.message);
-						},
-						'json');
-				}
-
-				function Subscribe() {
-
-					$.post(
-						'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/subscribe',
-						{
-							email: $('#newsletter800 .email').val()
-						},
-						function (e) {
-							if (e.error === 1) {
-								var r = confirm(e.message);
-								if (r == true) {
-									$.post(
-										'http://demo2.ninethemes.net/wokiee/opencart/1/index.php?route=extension/module/newsletter/unsubscribe',
-										{
-											email: $('#newsletter800 .email').val()
-										},
-										function (e) {
-											$('#newsletter800 .email').val('');
-											alert(e.message);
-										},
-										'json');
-								}
-							} else {
-								$('#newsletter800 .email').val('');
-								alert(e.message);
-							}
-						},
-						'json');
-
-				}
-
-				$('#newsletter800 .subscribe').click(Subscribe);
-				$('#newsletter800 .unsubscribe').click(Unsubscribe);
-				$('#newsletter800 .email').keypress(function (e) {
-					if (e.which == 13) {
-						Subscribe();
-					}
-				});
-			});
-		</script>*@
 		<div class="tt-footer-col tt-color-scheme-01">
 			<div class="container">
 				<div class="advanced-grid advanced-grid-7766136  " style="margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
