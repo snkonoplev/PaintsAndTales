@@ -6,60 +6,80 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <div class="container-indent">
 	<div class="container">
-		<table id="cart" class="table table-hover table-condensed">
-			<thead>
-				<tr>
-					<th style="width:50%">Продукт</th>
-					<th style="width:10%">Цвет</th>
-					<th style="width:10%">Размер</th>
-					<th style="width:10%">Цена</th>
-					<th style="width:8%">Количество</th>
-					<th style="width:22%" class="text-center">Подитог</th>
-					<th style="width:10%"></th>
-				</tr>
-			</thead>
-			<tbody>
-			@foreach (var item in Model)
-			{
-				<tr>
-					<td data-th="Product">
-						<div class="row">
-							<div class="col-sm-2 hidden-xs"><img src="@Url.Action("Show", "Home", new {name = item.ImageEntity.FileName, extension = item.ImageEntity.FileExtension})" class="img-responsive" /></div>
-							<div class="col-sm-10">
-								<h4 class="nomargin">@item.Product.Name</h4>
-								<p>@item.Product.Description</p>
-							</div>
-						</div>
-					</td>
-					<td data-th="Color">@item.ImageEntity.Color.Name</td>
-					<td data-th="Size">@item.Price.ProductSize.Name</td>
-					<td data-th="Price">₽@item.Price.Value</td>
-					<td data-th="Quantity">
-						<input type="number" class="form-control text-center" value="@item.Quantity">
-					</td>
-					<td data-th="Subtotal" class="text-center">@(item.Quantity*item.Price.Value)</td>
-					<td class="actions" data-th="">
-						<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-						<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-					</td>
-				</tr>
-			}
-			</tbody>
-			<tfoot>
-				<tr class="visible-xs">
-					<td class="text-center"><strong>Итого ₽@total</strong></td>
-				</tr>
-				<tr>
-					<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Назад в магазин</a></td>
-					<td colspan="2" class="hidden-xs"></td>
-					<td class="hidden-xs text-center"><strong>Итого ₽@total</strong></td>
-					<td><a href="#" class="btn btn-success btn-block">Оформить заказ<i class="fa fa-angle-right"></i></a></td>
-				</tr>
-			</tfoot>
-		</table>
+		@if (Model.Any())
+		{
+			<table id="cart" class="table table-hover table-condensed">
+				<thead>
+					<tr>
+						<th style="width: 50%">Продукт</th>
+						<th style="width: 10%">Цвет</th>
+						<th style="width: 10%">Размер</th>
+						<th style="width: 10%">Цена</th>
+						<th style="width: 8%">Количество</th>
+						<th style="width: 22%" class="text-center">Подитог</th>
+						<th style="width: 10%"></th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td data-th="Продукт">
+								<div class="row">
+									<div class="col-sm-2 hidden-xs"><img src="@Url.Action("Show", "Home", new {name = item.ImageEntity.FileName, extension = item.ImageEntity.FileExtension})" class="img-responsive" /></div>
+									<div class="col-sm-10">
+										<h4 class="nomargin">@item.Product.Name</h4>
+										<p>@item.Product.Description</p>
+									</div>
+								</div>
+							</td>
+							<td data-th="Цвет">@item.ImageEntity.Color.Name</td>
+							<td data-th="Размер">@item.Price.ProductSize.Name</td>
+							<td data-th="Цена">₽@item.Price.Value</td>
+							<td data-th="Количество">
+								<input id="input_@item.Id" type="number" class="form-control text-center" value="@item.Quantity">
+							</td>
+							<td data-th="Подитог" class="text-center">@(item.Quantity * item.Price.Value)</td>
+							<td class="actions" data-th="">
+								<button id="button_@item.Id" onclick="location.href='@Url.Action("Refresh", "Cart", new {id = item.Id, quantity = item.Quantity})';" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button onclick="location.href='@Url.Action("Remove", "Cart", new {id = item.Id})';" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+							</td>
+						</tr>
+					}
+				</tbody>
+				<tfoot>
+					<tr class="visible-xs">
+						<td class="text-center"><strong>Итого ₽@total</strong></td>
+					</tr>
+					<tr>
+						<td><a href="@Url.Action("Shop", "Shop")" class="btn btn-warning">Назад в магазин</a></td>
+						<td colspan="2" class="hidden-xs"></td>
+						<td class="hidden-xs text-center"><strong>Итого ₽@total</strong></td>
+						<td><a href="#" class="btn btn-success btn-block">Оформить заказ</a></td>
+					</tr>
+				</tfoot>
+			</table>
+		}
+		else
+		{
+			<p>Ваша корзина пуста!</p>
+		}
 	</div>
 </div>
-
+<script>
+	@foreach (var item in Model)
+	{
+		<text>
+			$("#input_@item.Id").on("change paste keyup",
+				function() {
+					var val = $(this).val();
+					var link = $("#button_@item.Id").attr("onclick");
+					var newLink = link.substring(0, link.lastIndexOf('&')) + '&quantity=' + val + "';";
+					$("#button_@item.Id").attr("onclick", newLink);
+				});
+		</text>
+	}
+</script>
 <style>
 	.table > tbody > tr > td, .table > tfoot > tr > td {
 		vertical-align: middle;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -44,7 +45,8 @@ namespace PaintsAndTales.WebApp.Controllers
 					Product = product,
 					ImageEntity = product.ProductImages.First(a => a.ColorId == item.ColorId),
 					Price = product.Prices.First(a => a.ProductSizeId == item.SizeId),
-					Quantity = item.Quantity
+					Quantity = item.Quantity,
+					Id = item.Id
 				};
 
 				result.Add(resultItem);
@@ -70,7 +72,7 @@ namespace PaintsAndTales.WebApp.Controllers
 			if (HttpContext.Session.GetObjectFromJson<List<Item>>("cart") == null)
 			{
 				List<Item> cart = new List<Item>();
-				cart.Add(new Item { ProductId = id, Quantity = quantity, ColorId = colorId, SizeId = sizeId });
+				cart.Add(new Item { ProductId = id, Quantity = quantity, ColorId = colorId, SizeId = sizeId, Id = Guid.NewGuid()});
 				HttpContext.Session.SetObjectAsJson("cart", cart);
 			}
 			else
@@ -85,7 +87,7 @@ namespace PaintsAndTales.WebApp.Controllers
 				}
 				else
 				{
-					cart.Add(new Item { ProductId = id, Quantity = quantity, ColorId = colorId, SizeId = sizeId });
+					cart.Add(new Item { ProductId = id, Quantity = quantity, ColorId = colorId, SizeId = sizeId, Id = Guid.NewGuid() });
 				}
 
 				HttpContext.Session.SetObjectAsJson("cart", cart);
@@ -95,13 +97,13 @@ namespace PaintsAndTales.WebApp.Controllers
 		}
 
 		[Route("remove")]
-		public IActionResult Remove(int id)
+		public IActionResult Remove(Guid id)
 		{
 			List<Item> cart = HttpContext.Session.GetObjectFromJson<List<Item>>("cart");
 
 			if (cart != null)
 			{
-				var item = cart.SingleOrDefault(a => a.ProductId == id);
+				var item = cart.SingleOrDefault(a => a.Id == id);
 
 				if (item != null)
 					cart.Remove(item);
@@ -109,7 +111,25 @@ namespace PaintsAndTales.WebApp.Controllers
 				HttpContext.Session.SetObjectAsJson("cart", cart);
 			}
 
-			return Redirect(Request.GetEncodedUrl());
+			return Redirect(Request.Headers["Referer"].ToString());
+		}
+
+		[Route("refresh")]
+		public IActionResult Refresh(Guid id, int quantity)
+		{
+			List<Item> cart = HttpContext.Session.GetObjectFromJson<List<Item>>("cart");
+
+			if (cart != null)
+			{
+				var item = cart.SingleOrDefault(a => a.Id == id);
+
+				if (item != null)
+					item.Quantity = quantity;
+
+				HttpContext.Session.SetObjectAsJson("cart", cart);
+			}
+
+			return Redirect(Request.Headers["Referer"].ToString());
 		}
 	}
 }
