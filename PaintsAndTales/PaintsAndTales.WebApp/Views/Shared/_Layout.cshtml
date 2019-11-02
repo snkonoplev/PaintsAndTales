@@ -11,7 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/theme/wokiee/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-	<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.min.js"></script>
+	@*<script type="text/javascript" src="~/catalog/view/theme/wokiee/js/jquery.min.js"></script>*@
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="">
@@ -165,8 +168,8 @@
 									</div>
 									<div class="tt-dropdown-inner">
 										<ul>
-											<li><a href="index-26.html?route=account/login"><i class="icon-f-76"></i>Войти</a></li>
-											<li><a href="index-27.html?route=account/register"><i class="icon-f-94"></i>Регистрация</a></li>
+											<li><a asp-action="Login" asp-controller="Account"><i class="icon-f-94"></i>Войти</a></li>
+											<li><a asp-action="Register" asp-controller="Account"><i class="icon-f-94"></i>Регистрация</a></li>
 										</ul>
 									</div>
 								</div>

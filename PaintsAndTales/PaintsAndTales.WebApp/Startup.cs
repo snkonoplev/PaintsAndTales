@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -42,6 +43,11 @@ namespace PaintsAndTales.WebApp
 			services.AddDbContext<ApplicationContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
 			services.AddDbContext<SoftDeletedApplicationContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
 			services.Configure<ApplicationConfig>(Configuration.GetSection("ApplicationConfig"));
+			services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+				.AddCookie(o =>
+				{
+					o.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+				});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +75,8 @@ namespace PaintsAndTales.WebApp
 			app.UseRouting();
 
 			app.UseAuthorization();
+
+			app.UseAuthentication();
 
 			app.UseEndpoints(endpoints =>
 			{
