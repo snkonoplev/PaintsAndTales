@@ -5,6 +5,7 @@ namespace PaintsAndTales.WebApp.Models
 	public class RegisterModel
 	{
 		[Required(ErrorMessage = "Не указан Email")]
+		[EmailAddress(ErrorMessage = "Не корректный Email")]
 		public string Email { get; set; }
 
 		[Required(ErrorMessage = "Не указан пароль")]
@@ -23,6 +24,7 @@ namespace PaintsAndTales.WebApp.Models
 		public string LastName { get; set; }
 
 		[Required(ErrorMessage = "Не указан телефон")]
+		[Phone(ErrorMessage = "Не корректный номер телефона")]
 		public string MobilePhone { get; set; }
 	}
 }

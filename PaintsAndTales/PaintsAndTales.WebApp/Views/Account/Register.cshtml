@@ -9,7 +9,7 @@
 			<div class="col-lg-12">
 				<div class="row">
 					<div class="col-lg-9 center-column" id="content">
-						<p>If you already have an account with us, please login at the <a href="index-26.html?route=account/login">login page</a>.</p>
+						<p>Если вы уже зарегестрированы, выполните вход на <a asp-controller="Account" asp-action="Login">странице</a>.</p>
 						<form asp-action="Register" asp-controller="Account" asp-anti-forgery="true" class="form-horizontal form-default">
 							<div class="validation" asp-validation-summary="ModelOnly"></div>
 							<fieldset id="account">
@@ -17,35 +17,35 @@
 								<div class="form-group row required">
 									<label class="col-sm-2 align-self-center control-label" asp-for="FirstName">Имя</label>
 									<div class="col-sm-10">
-										<input asp-for="FirstName" type="text" name="FirstName" value="" placeholder="Имя" id="input-firstname" class="form-control">
+										<input asp-for="FirstName" type="text" name="FirstName" value="@Model.FirstName" placeholder="Имя" id="input-firstname" class="form-control">
 										<span asp-validation-for="FirstName" class="text-danger"></span>
 									</div>
 								</div>
 								<div class="form-group row">
 									<label asp-for="MiddleName" class="col-sm-2 align-self-center control-label" for="input-middlename">Отчество</label>
 									<div class="col-sm-10">
-										<input asp-for="MiddleName" type="text" name="MiddleName" value="" placeholder="Отчество" id="input-middlename" class="form-control">
+										<input asp-for="MiddleName" type="text" name="MiddleName" value="@Model.MiddleName" placeholder="Отчество" id="input-middlename" class="form-control">
 										<span asp-validation-for="MiddleName" class="text-danger"></span>
 									</div>
 								</div>
 								<div class="form-group row">
 									<label asp-for="LastName" class="col-sm-2 align-self-center control-label" for="input-lastname">Фамилия</label>
 									<div class="col-sm-10">
-										<input asp-for="LastName" type="text" name="LastName" value="" placeholder="Фамилия" id="input-lastname" class="form-control">
+										<input asp-for="LastName" type="text" name="LastName" value="@Model.LastName" placeholder="Фамилия" id="input-lastname" class="form-control">
 										<span asp-validation-for="LastName" class="text-danger"></span>
 									</div>
 								</div>
 								<div class="form-group row required">
 									<label asp-for="Email" class="col-sm-2 align-self-center control-label" for="input-email">E-Mail</label>
 									<div class="col-sm-10">
-										<input asp-for="Email" type="email" name="Email" value="" placeholder="E-Mail" id="input-email" class="form-control">
+										<input asp-for="Email" type="email" name="Email" value="@Model.Email" placeholder="E-Mail" id="input-email" class="form-control">
 										<span asp-validation-for="Email" class="text-danger"></span>
 									</div>
 								</div>
 								<div class="form-group row required">
 									<label asp-for="MobilePhone" class="col-sm-2 align-self-center control-label" for="input-telephone">Телефон</label>
 									<div class="col-sm-10">
-										<input asp-for="MobilePhone" type="tel" name="MobilePhone" value="" placeholder="Телефон" id="input-telephone" class="form-control">
+										<input asp-for="MobilePhone" type="tel" name="MobilePhone" value="@Model.MobilePhone" placeholder="Телефон" id="input-telephone" class="form-control">
 										<span asp-validation-for="MobilePhone" class="text-danger"></span>
 									</div>
 								</div>

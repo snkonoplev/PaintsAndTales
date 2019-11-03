@@ -168,8 +168,15 @@
 									</div>
 									<div class="tt-dropdown-inner">
 										<ul>
-											<li><a asp-action="Login" asp-controller="Account"><i class="icon-f-94"></i>Войти</a></li>
-											<li><a asp-action="Register" asp-controller="Account"><i class="icon-f-94"></i>Регистрация</a></li>
+											@if (User.Identity.IsAuthenticated)
+											{
+												<li><a asp-action="Logout" asp-controller="Account"><i class="icon-f-94"></i>Выйти</a></li>
+											}
+											else
+											{
+												<li><a asp-action="Login" asp-controller="Account"><i class="icon-f-76"></i>Войти</a></li>
+												<li><a asp-action="Register" asp-controller="Account"><i class="icon-f-94"></i>Регистрация</a></li>
+											}
 										</ul>
 									</div>
 								</div>

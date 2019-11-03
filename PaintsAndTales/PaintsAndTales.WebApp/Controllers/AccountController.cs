@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using PaintsAndTales.Common;
 using PaintsAndTales.Model;
 using PaintsAndTales.Model.Entities;
 using PaintsAndTales.WebApp.Models;
@@ -14,9 +16,12 @@ namespace PaintsAndTales.WebApp.Controllers
 	public class AccountController : Controller
 	{
 		private readonly SoftDeletedApplicationContext _context;
-		public AccountController(SoftDeletedApplicationContext context)
+		private readonly IOptions<ApplicationConfig> _config;
+
+		public AccountController(SoftDeletedApplicationContext context, IOptions<ApplicationConfig> config)
 		{
 			_context = context;
+			_config = config;
 		}
 		[HttpGet]
 		public IActionResult Login()
@@ -29,13 +34,19 @@ namespace PaintsAndTales.WebApp.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				User user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+				User user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Email == model.Email);
+
 				if (user != null)
 				{
-					await Authenticate(model.Email);
+					string password = PasswordEncrypt.DecryptStringAes(user.Password, _config.Value.Salt);
 
-					return RedirectToAction("Index", "Home");
+					if (model.Password == password)
+					{
+						await Authenticate(model.Email);
+						return RedirectToAction("Index", "Home");
+					}
 				}
+
 				ModelState.AddModelError("", "Некорректные логин и(или) пароль");
 			}
 			return View(model);
@@ -43,7 +54,7 @@ namespace PaintsAndTales.WebApp.Controllers
 		[HttpGet]
 		public IActionResult Register()
 		{
-			return View();
+			return View(new RegisterModel());
 		}
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -54,10 +65,14 @@ namespace PaintsAndTales.WebApp.Controllers
 				User user = await _context.Set<User>().FirstOrDefaultAsync(u => u.Email == model.Email);
 				if (user == null)
 				{
+
+					string pas = PasswordEncrypt.EncryptStringAes(model.Password, _config.Value.Salt);
+
+
 					_context.Set<User>().Add(new User
 					{
 						Email = model.Email, 
-						Password = model.Password,
+						Password = pas,
 						FirstName = model.FirstName,
 						MiddleName = model.MiddleName,
 						LastName = model.LastName,
@@ -69,8 +84,8 @@ namespace PaintsAndTales.WebApp.Controllers
 
 					return RedirectToAction("Index", "Home");
 				}
-				else
-					ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+
+				ModelState.AddModelError("", "Некорректные логин и(или) пароль");
 			}
 			return View(model);
 		}
