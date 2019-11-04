@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
@@ -76,7 +77,8 @@ namespace PaintsAndTales.WebApp.Controllers
 						FirstName = model.FirstName,
 						MiddleName = model.MiddleName,
 						LastName = model.LastName,
-						MobilePhone = model.MobilePhone
+						MobilePhone = model.MobilePhone,
+						Created = DateTime.UtcNow
 					});
 					await _context.SaveChangesAsync();
 

@@ -12,6 +12,8 @@ namespace PaintsAndTales.Model.Configurations
 
 			builder.HasKey(t => t.Id);
 			builder.Property(t => t.Id).IsRequired().HasColumnName("id").HasColumnType("int(11)").UseMySqlIdentityColumn();
+			builder.Property(t => t.Created).IsRequired().HasColumnName("created").HasColumnType("DATETIME");
+			builder.Property(t => t.Deleted).HasColumnName("deleted").HasColumnType("DATETIME");
 			builder.Property(t => t.Email).IsRequired().HasColumnName("email").HasColumnType("varchar(50)");
 			builder.Property(t => t.Password).IsRequired().HasColumnName("password").HasColumnType("varchar(50)");
 			builder.Property(t => t.MobilePhone).IsRequired().HasColumnName("mobile_phone").HasColumnType("varchar(50)");
