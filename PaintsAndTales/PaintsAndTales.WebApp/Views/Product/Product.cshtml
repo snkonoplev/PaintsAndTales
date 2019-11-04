@@ -93,7 +93,7 @@
 										<div class="tt-title-options"><label class="control-label" for="input-option223">Цвет:</label></div>
 										<div class="form-group required">
 											<ul class="tt-options-swatch options-large">
-												@foreach(var color in Model.Product.ProductImages.Select(a => a.Color).GroupBy(a => a.Id).Select(a=>a.First()))
+												@foreach(var color in Model.Product.ProductImages.Where(a => a.Color != null).Select(a => a.Color).GroupBy(a => a.Id).Select(a=>a.First()))
 												{
 													<li onclick="location.href='@Url.Action("Product","Product", new {id = Model.Product.Id, sizeId = Model.SizeId, colorId = color.Id})';" class="@(Model.ColorId == color.Id ? "active" : "")">
 														<a class="options-color">
