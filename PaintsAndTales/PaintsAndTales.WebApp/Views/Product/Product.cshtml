@@ -8,7 +8,7 @@
 	<!-- mobile product slider  -->
 	<div class="tt-mobile-product-layout visible-xs">
 		<div class="tt-mobile-product-slider arrow-location-center slick-animated-show-js">
-			@foreach (var image in Model.Product.ProductImages.OrderByDescending(a => a.ColorId == Model.ColorId))
+			@foreach (var image in Model.Product.ProductImages.OrderByDescending(a => a.IsTitleImage || a.ColorId == Model.ColorId))
 			{
 				<div><img src="@Url.Action("Show","Home", new {name = image.FileName, extension = image.FileExtension})" alt=""></div>
 			}
