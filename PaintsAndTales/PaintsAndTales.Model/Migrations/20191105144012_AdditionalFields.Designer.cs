@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaintsAndTales.Model;
 
 namespace PaintsAndTales.Model.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20191105144012_AdditionalFields")]
+    partial class AdditionalFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,7 +113,14 @@ namespace PaintsAndTales.Model.Migrations
                         .HasColumnName("name")
                         .HasColumnType("varchar(500)");
 
+                    b.Property<int>("OrderId")
+                        .HasColumnName("order_id")
+                        .HasColumnType("int(11)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
 
                     b.ToTable("contacts");
                 });
@@ -189,8 +198,7 @@ namespace PaintsAndTales.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContactId")
-                        .IsUnique();
+                    b.HasIndex("ContactId");
 
                     b.HasIndex("UserId");
 
@@ -419,6 +427,15 @@ namespace PaintsAndTales.Model.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PaintsAndTales.Model.Entities.Contact", b =>
+                {
+                    b.HasOne("PaintsAndTales.Model.Entities.Order", "Order")
+                        .WithOne("Contact")
+                        .HasForeignKey("PaintsAndTales.Model.Entities.Contact", "OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PaintsAndTales.Model.Entities.ImageEntity", b =>
                 {
                     b.HasOne("PaintsAndTales.Model.Entities.ColorEntity", "Color")
@@ -434,10 +451,6 @@ namespace PaintsAndTales.Model.Migrations
 
             modelBuilder.Entity("PaintsAndTales.Model.Entities.Order", b =>
                 {
-                    b.HasOne("PaintsAndTales.Model.Entities.Contact", "Contact")
-                        .WithOne("Order")
-                        .HasForeignKey("PaintsAndTales.Model.Entities.Order", "ContactId");
-
                     b.HasOne("PaintsAndTales.Model.Entities.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId");

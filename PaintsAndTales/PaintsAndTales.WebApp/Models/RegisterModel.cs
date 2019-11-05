@@ -25,6 +25,7 @@ namespace PaintsAndTales.WebApp.Models
 
 		[Required(ErrorMessage = "Не указан телефон")]
 		[Phone(ErrorMessage = "Не корректный номер телефона")]
+		[MinLength(10, ErrorMessage = "Не корректная длинна номера телефона")]
 		public string MobilePhone { get; set; }
 	}
 }

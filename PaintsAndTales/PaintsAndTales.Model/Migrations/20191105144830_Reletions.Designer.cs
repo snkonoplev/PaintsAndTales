@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PaintsAndTales.Model;
 
 namespace PaintsAndTales.Model.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20191105144830_Reletions")]
+    partial class Reletions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,7 +113,14 @@ namespace PaintsAndTales.Model.Migrations
                         .HasColumnName("name")
                         .HasColumnType("varchar(500)");
 
+                    b.Property<int>("OrderId")
+                        .HasColumnName("order_id")
+                        .HasColumnType("int(11)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderId")
+                        .IsUnique();
 
                     b.ToTable("contacts");
                 });

@@ -102,7 +102,7 @@ namespace PaintsAndTales.WebApp.Controllers
 
 			if (cart != null)
 			{
-				var item = cart.SingleOrDefault(a => a.Id == id);
+				Item item = cart.SingleOrDefault(a => a.Id == id);
 
 				if (item != null)
 					cart.Remove(item);
@@ -120,10 +120,10 @@ namespace PaintsAndTales.WebApp.Controllers
 
 			if (cart != null)
 			{
-				var item = cart.SingleOrDefault(a => a.Id == id);
+				Item item = cart.SingleOrDefault(a => a.Id == id);
 
 				if (item != null)
-					item.Quantity = quantity;
+					item.Quantity = quantity > 0 ? quantity : item.Quantity;
 
 				HttpContext.Session.SetObjectAsJson("cart", cart);
 			}

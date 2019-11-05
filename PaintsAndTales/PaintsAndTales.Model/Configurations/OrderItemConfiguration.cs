@@ -18,6 +18,7 @@ namespace PaintsAndTales.Model.Configurations
 			builder.Property(t => t.ProductId).IsRequired().HasColumnName("product_id").HasColumnType("int(11)");
 			builder.Property(t => t.SizeId).IsRequired().HasColumnName("size_id").HasColumnType("int(11)");
 			builder.Property(t => t.ColorId).IsRequired().HasColumnName("color_id").HasColumnType("int(11)");
+			builder.Property(t => t.Quantity).IsRequired().HasColumnName("quantity").HasColumnType("int(11)");
 			builder.Property(t => t.Price).IsRequired().HasColumnName("price").HasColumnType("DECIMAL(5,2)");
 
 			builder.HasIndex(a => a.OrderId);

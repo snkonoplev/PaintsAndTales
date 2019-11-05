@@ -21,6 +21,7 @@ namespace PaintsAndTales.Model.Configurations
 			builder.HasIndex(a => a.UserId);
 
 			builder.HasOne(a => a.User).WithMany(a => a.Orders).HasForeignKey(a => a.UserId);
+			builder.HasOne(a => a.Contact).WithOne(a => a.Order).HasForeignKey<Order>(a => a.ContactId);
 		}
 	}
 }

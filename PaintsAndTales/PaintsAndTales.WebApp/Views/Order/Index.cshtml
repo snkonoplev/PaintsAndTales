@@ -1,0 +1,53 @@
+﻿@model ContactViewModel;
+@{
+	ViewData["Title"] = "Index";
+}
+
+<div class="container-indent">
+	<div class="container container-fluid-custom-mobile-padding">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="col-lg-9 center-column" id="content">
+						<div class="row form-default">
+							<div class="col-md-12">
+								<div class="d-block d-md-none" style="height: 30px"></div>
+								<div class="well">
+									<h5>Зарегистировать заказ</h5>
+									<form asp-action="Register" asp-controller="Order" asp-anti-forgery="true" class="form-horizontal form-default">
+										<div class="validation" asp-validation-summary="ModelOnly"></div>
+										<div class="form-group">
+											<label asp-for="Name" class="control-label" for="input-email">Имя</label>
+											<input asp-for="Name" type="text" name="Name" value="@Model.Name" placeholder="Имя" id="input-name" class="form-control">
+											<span asp-validation-for="Name" class="text-danger"></span>
+										</div>
+										<div class="form-group">
+											<label asp-for="MobilePhone" class="control-label" for="input-email">Телефон</label>
+											<input asp-for="MobilePhone" type="text" name="MobilePhone" value="@Model.MobilePhone" placeholder="Телефон" id="input-name" class="form-control">
+											<span asp-validation-for="MobilePhone" class="text-danger"></span>
+										</div>
+										<div class="form-group">
+											<label asp-for="Address" class="control-label" for="input-email">Адрес</label>
+											<textarea asp-for="Address" type="text" name="Address" value="@Model.Address" placeholder="Адрес" id="input-name" class="form-control"></textarea>
+											<span asp-validation-for="Address" class="text-danger"></span>
+										</div>
+										<div class="form-group">
+											<label asp-for="Comment" class="control-label" for="input-email">Комментарий</label>
+											<textarea asp-for="Comment" type="text" name="Comment" value="@Model.Comment" placeholder="Комментарий" id="input-name" class="form-control"></textarea>
+											<span asp-validation-for="Comment" class="text-danger"></span>
+										</div>
+										<input type="submit" value="Отправить" class="btn btn-primary">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+			</div>
+		</div>
+	</div>
+</div>

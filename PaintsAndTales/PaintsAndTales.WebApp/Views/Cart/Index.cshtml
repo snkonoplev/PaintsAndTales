@@ -37,7 +37,7 @@
 							<td data-th="Размер">@item.Price.ProductSize.Name</td>
 							<td data-th="Цена">₽@item.Price.Value</td>
 							<td data-th="Количество">
-								<input id="input_@item.Id" type="number" class="form-control text-center" value="@item.Quantity">
+								<input id="input_@item.Id" type="number" min="0" class="form-control text-center" value="@item.Quantity">
 							</td>
 							<td data-th="Подитог" class="text-center">@(item.Quantity * item.Price.Value)</td>
 							<td class="actions" data-th="">
@@ -55,7 +55,7 @@
 						<td><a href="@Url.Action("Shop", "Shop")" class="btn btn-warning">Назад в магазин</a></td>
 						<td colspan="2" class="hidden-xs"></td>
 						<td class="hidden-xs text-center"><strong>Итого ₽@total</strong></td>
-						<td><a href="#" class="btn btn-success btn-block">Оформить заказ</a></td>
+						<td><a href="@Url.Action("Index", "Order")" class="btn btn-success btn-block">Оформить заказ</a></td>
 					</tr>
 				</tfoot>
 			</table>

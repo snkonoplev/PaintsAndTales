@@ -20,6 +20,8 @@ namespace PaintsAndTales.Model.Configurations
 			builder.Property(t => t.FirstName).IsRequired().HasColumnName("first_name").HasColumnType("varchar(50)");
 			builder.Property(t => t.MiddleName).HasColumnName("middle_name").HasColumnType("varchar(50)");
 			builder.Property(t => t.LastName).HasColumnName("last_name").HasColumnType("varchar(50)");
+
+			builder.HasIndex(a => a.Email).IsUnique();
 		}
 	}
 }

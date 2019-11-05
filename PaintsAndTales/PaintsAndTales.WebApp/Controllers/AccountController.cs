@@ -94,7 +94,7 @@ namespace PaintsAndTales.WebApp.Controllers
 
 		private async Task Authenticate(string userName)
 		{
-			var claims = new List<Claim>
+			List<Claim> claims = new List<Claim>
 			{
 				new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
 			};
