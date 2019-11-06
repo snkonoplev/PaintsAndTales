@@ -24,12 +24,16 @@ namespace PaintsAndTales.WebApp.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			User user = await _context.Set<User>().SingleOrDefaultAsync(a => a.Email == User.Identity.Name) ?? new User();
+			User user = await _context.Set<User>()
+				            .Include(a => a.Orders)
+				            .ThenInclude(a => a.Contact)
+				            .SingleOrDefaultAsync(a => a.Email == User.Identity.Name) ?? new User();
 			
 			ContactViewModel model = new ContactViewModel
 			{
 				Name = user.FirstName,
-				MobilePhone = user.MobilePhone
+				MobilePhone = user.MobilePhone,
+				Address = user.Orders?.OrderByDescending(a => a.Created).FirstOrDefault()?.Contact?.Address
 			};
 
 			return View(model);
@@ -98,7 +102,7 @@ namespace PaintsAndTales.WebApp.Controllers
 				.ThenInclude(a => a.OrderItems)
 				.SingleAsync(a => a.Email == User.Identity.Name);
 
-			foreach (var order in user.Orders)
+			foreach (var order in user.Orders.OrderByDescending(a => a.Created))
 			{
 				OrderViewModel orderView = new OrderViewModel
 				{

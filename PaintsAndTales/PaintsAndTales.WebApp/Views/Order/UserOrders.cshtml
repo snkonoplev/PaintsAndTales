@@ -3,38 +3,49 @@
 	ViewData["Title"] = "Ваши заказы";
 }
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-@foreach (var order in Model)
-{
-	<button class="accordion">Заказ №@order.Id Итого ₽@order.Total</button>
-	<div class="panel">
-		<div class="table-responsive mobile-overflow">
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Продукт</th>
-						<th scope="col">Размер</th>
-						<th scope="col">Цвет</th>
-						<th scope="col">Кол-во</th>
-						<th scope="col">Цена</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach (var item in order.Items)
-					{
-						<tr>
-							<th scope="row">@item.Product.Name</th>
-							<td>@item.SizeName</td>
-							<td>@item.ColorName</td>
-							<td>@item.Quantity</td>
-							<td>₽@item.Price</td>
-						</tr>
-					}
-				</tbody>
-			</table>
-		</div>
+<div class="container-indent">
+	<div class="container">
+		@if (Model.Any())
+		{
+			@foreach (var order in Model)
+			{
+				<button class="accordion">Заказ №@order.Id Итого ₽@order.Total</button>
+				<div class="panel">
+					<div class="table-responsive mobile-overflow">
+						<table class="table">
+							<thead>
+							<tr>
+								<th scope="col">Продукт</th>
+								<th scope="col">Размер</th>
+								<th scope="col">Цвет</th>
+								<th scope="col">Кол-во</th>
+								<th scope="col">Цена</th>
+							</tr>
+							</thead>
+							<tbody>
+							@foreach (var item in order.Items)
+							{
+								<tr>
+									<th scope="row">@item.Product.Name</th>
+									<td>@item.SizeName</td>
+									<td>@item.ColorName</td>
+									<td>@item.Quantity</td>
+									<td>₽@item.Price</td>
+								</tr>
+							}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			}
+		}
+		else
+		{
+			<p>Нет ни одного заказа.</p>
+		}
 	</div>
-}
+</div>
+
 
 <script>
 	var acc = document.getElementsByClassName("accordion");

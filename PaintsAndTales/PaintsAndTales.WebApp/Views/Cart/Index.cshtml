@@ -37,7 +37,7 @@
 							<td data-th="Размер">@item.Price.ProductSize.Name</td>
 							<td data-th="Цена">₽@item.Price.Value</td>
 							<td data-th="Количество">
-								<input id="input_@item.Id" type="number" min="0" class="form-control text-center" value="@item.Quantity">
+								<input id="@item.Id" type="number" min="1" class="form-control text-center quantity-input" value="@item.Quantity">
 							</td>
 							<td data-th="Подитог" class="text-center">@(item.Quantity * item.Price.Value)</td>
 							<td class="actions" data-th="">
@@ -67,18 +67,40 @@
 	</div>
 </div>
 <script>
-	@foreach (var item in Model)
+	$(".quantity-input").on("change paste keyup",
+		function () {
+
+			var val = $(this).val();
+
+			if (1 > val) {
+				$(this).val(1);
+				val = 1;
+			}
+
+			var id = $(this).attr('id');
+			var link = $("#button_" + id).attr("onclick");
+			var newLink = link.substring(0, link.lastIndexOf('&')) + '&quantity=' + val + "';";
+			$("#button_" + id).attr("onclick", newLink);
+		});
+	@*@foreach (var item in Model)
 	{
 		<text>
 			$("#input_@item.Id").on("change paste keyup",
-				function() {
+				function () {
+
 					var val = $(this).val();
+
+					if (1 > val) {
+						$(this).val(1);
+						val = 1;
+					}
+
 					var link = $("#button_@item.Id").attr("onclick");
 					var newLink = link.substring(0, link.lastIndexOf('&')) + '&quantity=' + val + "';";
 					$("#button_@item.Id").attr("onclick", newLink);
 				});
 		</text>
-	}
+	}*@
 </script>
 <style>
 	.table > tbody > tr > td, .table > tfoot > tr > td {
