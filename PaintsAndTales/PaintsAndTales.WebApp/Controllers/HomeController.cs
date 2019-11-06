@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -70,6 +71,16 @@ namespace PaintsAndTales.WebApp.Controllers
 		public IActionResult Contacts()
 		{
 			return View();
+		}
+
+		[Route("sitemap")]
+		[Route("sitemap.xml")]
+		public ActionResult Sitemap()
+		{
+			Generator sitemapGenerator = new Generator(_context);
+			var sitemapNodes = sitemapGenerator.GetSitemapNodes(Url);
+			string xml = sitemapGenerator.GetSitemapDocument(sitemapNodes);
+			return Content(xml, "text/xml", Encoding.UTF8);
 		}
 	}
 }
