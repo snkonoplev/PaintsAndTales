@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
 	<link href="~/image/catalog/favicon.png" rel="icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - StickerMania</title>
+	<title>@ViewData["Title"]</title>
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/theme/wokiee/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="~/catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -87,8 +87,8 @@
 										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "About" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>О НАС</a>
 										</li>
-										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "Contacts" ? "selected" : "")'>
-											<a href='@Url.Action("Index","Home")' class=''>КОНТАКТЫ</a>
+										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "Контакты" ? "selected" : "")'>
+											<a href='@Url.Action("Contacts","Home")' class=''>КОНТАКТЫ</a>
 										</li>
 									</ul>
 								</nav>
@@ -105,7 +105,7 @@
 											<a href='@Url.Action("Index","Home")' class=''>О НАС</a>
 										</li>
 										<li>
-											<a href='@Url.Action("Index","Home")' class=''>КОНТАКТЫ</a>
+											<a href='@Url.Action("Contacts","Home")' class=''>КОНТАКТЫ</a>
 										</li>
 									</ul>
 									<div class="mm-navbtn-names">
@@ -253,7 +253,7 @@
 												<li><a href="@Url.Action("Index","Home")">Домашняя</a></li>
 												<li><a href="@Url.Action("Shop","Shop")">Магазин</a></li>
 												<li><a href="@Url.Action("Index","Home")">О НАС</a></li>
-												<li><a href="@Url.Action("Index","Home")">Контакты</a></li>
+												<li><a href="@Url.Action("Contacts","Home")">Контакты</a></li>
 											</ul>
 										</div>
 									</div>

@@ -65,5 +65,11 @@ namespace PaintsAndTales.WebApp.Controllers
 				return new StatusCodeResult(StatusCodes.Status500InternalServerError);
 			}
 		}
+
+		[Route("contacts")]
+		public IActionResult Contacts()
+		{
+			return View();
+		}
 	}
 }

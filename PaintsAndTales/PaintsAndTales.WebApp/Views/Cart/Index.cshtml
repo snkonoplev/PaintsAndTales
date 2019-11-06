@@ -1,6 +1,6 @@
 ﻿@model IList<CardItemViewModel>
 @{
-	ViewData["Title"] = "Index";
+	ViewData["Title"] = "Корзина";
 	var total = Model.Sum(a => a.Price.Value * a.Quantity);
 }
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
