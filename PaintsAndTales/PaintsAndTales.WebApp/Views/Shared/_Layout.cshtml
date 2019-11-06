@@ -170,6 +170,7 @@
 										<ul>
 											@if (User.Identity.IsAuthenticated)
 											{
+												<li><a asp-action="UserOrders" asp-controller="Order"><i class="fas fa-align-justify" style="margin-right: 8px;"></i>Мои заказы</a></li>
 												<li><a asp-action="Logout" asp-controller="Account"><i class="icon-f-94"></i>Выйти</a></li>
 											}
 											else

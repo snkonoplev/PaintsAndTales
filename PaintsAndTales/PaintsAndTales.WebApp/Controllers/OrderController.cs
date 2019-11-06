@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaintsAndTales.Model;
@@ -83,6 +85,54 @@ namespace PaintsAndTales.WebApp.Controllers
 			}
 
 			return View("Index", model);
+		}
+
+		[Authorize]
+		[Route("orders")]
+		public async Task<IActionResult> UserOrders()
+		{
+			List<OrderViewModel> model = new List<OrderViewModel>();
+
+			User user = await _context.Set<User>()
+				.Include(a => a.Orders)
+				.ThenInclude(a => a.OrderItems)
+				.SingleAsync(a => a.Email == User.Identity.Name);
+
+			foreach (var order in user.Orders)
+			{
+				OrderViewModel orderView = new OrderViewModel
+				{
+					Id = order.Id,
+					CreateDateTime = order.Created,
+					Total = order.OrderItems.Sum(a => a.Price * a.Quantity),
+					Items = new List<OrderItemViewModel>()
+				};
+
+				foreach (var item in order.OrderItems)
+				{
+					OrderItem orderItem = await _context.Set<OrderItem>()
+						.Include(a => a.ColorEntity)
+						.Include(a => a.ProductSize)
+						.Include(a => a.Product)
+						.SingleAsync(a => a.Id == item.Id);
+
+					OrderItemViewModel itemView = new OrderItemViewModel
+					{
+						ColorName = orderItem.ColorEntity.Name,
+						Product = orderItem.Product,
+						SizeName = orderItem.ProductSize.Name,
+						Quantity = orderItem.Quantity,
+						Price = orderItem.Price
+					};
+
+					orderView.Items.Add(itemView);
+				}
+
+				if(orderView.Items.Any())
+					model.Add(orderView);
+			}
+
+			return View(model);
 		}
     }
 }

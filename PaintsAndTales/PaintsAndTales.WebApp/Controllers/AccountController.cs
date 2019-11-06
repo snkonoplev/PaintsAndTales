@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -24,11 +25,13 @@ namespace PaintsAndTales.WebApp.Controllers
 			_context = context;
 			_config = config;
 		}
+
 		[HttpGet]
 		public IActionResult Login()
 		{
 			return View();
 		}
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Login(LoginModel model)
@@ -52,11 +55,13 @@ namespace PaintsAndTales.WebApp.Controllers
 			}
 			return View(model);
 		}
+
 		[HttpGet]
 		public IActionResult Register()
 		{
 			return View(new RegisterModel());
 		}
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register(RegisterModel model)
@@ -98,7 +103,7 @@ namespace PaintsAndTales.WebApp.Controllers
 			{
 				new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
 			};
-			
+
 			ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
 			await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
 		}

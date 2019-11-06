@@ -1,0 +1,95 @@
+﻿@model List<OrderViewModel>;
+@{
+	ViewData["Title"] = "UserOrders";
+}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+@foreach (var order in Model)
+{
+	<button class="accordion">Заказ №@order.Id Итого ₽@order.Total</button>
+	<div class="panel">
+		<div class="table-responsive mobile-overflow">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Продукт</th>
+						<th scope="col">Размер</th>
+						<th scope="col">Цвет</th>
+						<th scope="col">Кол-во</th>
+						<th scope="col">Цена</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in order.Items)
+					{
+						<tr>
+							<th scope="row">@item.Product.Name</th>
+							<td>@item.SizeName</td>
+							<td>@item.ColorName</td>
+							<td>@item.Quantity</td>
+							<td>₽@item.Price</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+}
+
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function () {
+			/* Toggle between adding and removing the "active" class,
+			to highlight the button that controls the panel */
+			this.classList.toggle("active");
+
+			/* Toggle between hiding and showing the active panel */
+			var panel = this.nextElementSibling;
+			if (panel.style.display === "block") {
+				panel.style.display = "none";
+			} else {
+				panel.style.display = "block";
+			}
+		});
+	}
+
+</script>
+<style>
+	/* Style the buttons that are used to open and close the accordion panel */
+	.accordion {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		text-align: left;
+		border: none;
+		outline: none;
+		transition: 0.4s;
+	}
+
+		/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+		.active, .accordion:hover {
+			background-color: #ccc;
+		}
+
+	/* Style the accordion panel. Note: hidden by default */
+	.panel {
+		padding: 0 18px;
+		background-color: white;
+		display: none;
+		overflow: hidden;
+	}
+	.mobile-overflow {
+		overflow: hidden;
+	}
+	@@media screen and (max-width: 600px) {
+		.mobile-overflow {
+			overflow: auto !important;
+		}
+	}
+</style>
+

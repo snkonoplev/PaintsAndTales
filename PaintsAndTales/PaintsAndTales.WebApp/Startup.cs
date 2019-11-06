@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -72,11 +73,11 @@ namespace PaintsAndTales.WebApp
 
 			app.UseStaticFiles();
 
-			app.UseRouting();
-
 			app.UseAuthorization();
 
 			app.UseAuthentication();
+
+			app.UseRouting();
 
 			app.UseEndpoints(endpoints =>
 			{
