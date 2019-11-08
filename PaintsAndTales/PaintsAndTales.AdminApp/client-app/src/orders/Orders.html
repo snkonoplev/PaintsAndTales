@@ -1,0 +1,27 @@
+<div class="container-fluid">
+	<h1 class="h3 mb-2 text-gray-800">Заказы</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Дата создания</th>
+				<th scope="col">Ф.И.О.</th>
+				<th scope="col">Телефон</th>
+				<th scope="col">Email</th>
+				<th scope="col">Кол-во продуктов</th>
+				<th scope="col">Сумма</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="order in orders">
+				<th scope="row">{{order.id}}</th>
+				<td>{{formatDate(order.created)}}</td>
+				<td>{{order.fullName}}</td>
+				<td>{{order.phone}}</td>
+				<td>{{order.email}}</td>
+				<td>{{order.quantity}}</td>
+				<td>{{order.price}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
