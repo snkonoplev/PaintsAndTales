@@ -78,16 +78,16 @@
 							<div class="tt-desctop-menu">
 								<nav>
 									<ul>
-										<li class='dropdown tt-megamenu-col-02 tt-submenu @((string)ViewData["Title"] == "Домашняя" ? "selected" : "")'>
+										<li class='dropdown megamenu @((string)ViewData["Title"] == "Домашняя" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>ДОМАШНЯЯ</a>
 										</li>
-										<li class='  dropdown megamenu tt-submenu @((string)ViewData["Title"] == "Магазин" ? "selected" : "")'>
+										<li class='dropdown megamenu @((string)ViewData["Title"] == "Магазин" ? "selected" : "")'>
 											<a href='@Url.Action("Shop","Shop")' class=''>МАГАЗИН</a>
 										</li>
-										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "About" ? "selected" : "")'>
+										<li class='dropdown megamenu @((string)ViewData["Title"] == "About" ? "selected" : "")'>
 											<a href='@Url.Action("Index","Home")' class=''>О НАС</a>
 										</li>
-										<li class='dropdown tt-megamenu-col-01 tt-submenu @((string)ViewData["Title"] == "Контакты" ? "selected" : "")'>
+										<li class='dropdown megamenu @((string)ViewData["Title"] == "Контакты" ? "selected" : "")'>
 											<a href='@Url.Action("Contacts","Home")' class=''>КОНТАКТЫ</a>
 										</li>
 									</ul>
